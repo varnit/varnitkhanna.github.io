@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sqlite on Server Notes</title>
+    <link>http://localhost:1313/tags/sqlite/</link>
+    <description>Recent content in Sqlite on Server Notes</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 29 Aug 2009 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/sqlite/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>sqlite query index</title>
+      <link>http://localhost:1313/notes/sqlite-query-index/</link>
+      <pubDate>Sat, 29 Aug 2009 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/sqlite-query-index/</guid>
+      <description>&lt;p&gt;Here is a basic intro to sqlite indexes.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;sqlite&amp;gt; CREATE TABLE dogs (dog_id INTEGER PRIMARY KEY AUTOINCREMENT, dog_name VARCHAR(100), state CHAR(2));&lt;/p&gt;&#xA;&lt;p&gt;sqlite&amp;gt; CREATE INDEX dog on dogs(state);&lt;/p&gt;&#xA;&lt;p&gt;sqlite&amp;gt; .indices dogs dog&lt;/p&gt;&#xA;&lt;p&gt;sqlite&amp;gt; EXPLAIN QUERY PLAN SELECT dog_name FROM dogs WHERE state=&amp;lsquo;FL&amp;rsquo;; 0|0|TABLE leagues WITH INDEX league&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+  </channel>
+</rss>

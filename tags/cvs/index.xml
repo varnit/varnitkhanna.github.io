@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cvs on Server Notes</title>
+    <link>http://localhost:1313/tags/cvs/</link>
+    <description>Recent content in Cvs on Server Notes</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 23 Oct 2007 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/cvs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CVS diff different versions of the file</title>
+      <link>http://localhost:1313/notes/cvs-things-to-remember/</link>
+      <pubDate>Tue, 23 Oct 2007 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/cvs-things-to-remember/</guid>
+      <description>&lt;p&gt;&lt;code&gt;cvs diff -u -r 1.42 -r 1.43 classes/someClass.php&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>remote cvs checkout</title>
+      <link>http://localhost:1313/notes/remote-cvs-checkout/</link>
+      <pubDate>Tue, 23 Oct 2007 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/remote-cvs-checkout/</guid>
+      <description>&lt;p&gt;&lt;code&gt;cvs -d :pserver:username@server:/usr/local/cvsroot checkout project&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
