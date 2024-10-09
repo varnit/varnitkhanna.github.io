@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Server Notes</title>
+    <link>http://localhost:1313/tags/linux/</link>
+    <description>Recent content in Linux on Server Notes</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 13 Dec 2007 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>grep wildcard</title>
+      <link>http://localhost:1313/notes/grep-wildcard/</link>
+      <pubDate>Thu, 13 Dec 2007 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/grep-wildcard/</guid>
+      <description>&lt;p&gt;Searches for a line with class*module* &lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;grep -Rni &amp;lsquo;class.*module.*&amp;rsquo; *&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>rsync over ssh</title>
+      <link>http://localhost:1313/notes/rsync-over-ssh/</link>
+      <pubDate>Thu, 13 Dec 2007 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/rsync-over-ssh/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;rsync -truve ssh /local/dir/to/copy/* remoteServer:/path/to/save/&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+  </channel>
+</rss>

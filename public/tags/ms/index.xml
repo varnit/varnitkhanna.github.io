@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ms on Server Notes</title>
+    <link>http://localhost:1313/tags/ms/</link>
+    <description>Recent content in Ms on Server Notes</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 22 Jan 2008 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ms/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MS Word insert table of contents</title>
+      <link>http://localhost:1313/notes/ms-word-insert-table-of-contents/</link>
+      <pubDate>Tue, 22 Jan 2008 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/ms-word-insert-table-of-contents/</guid>
+      <description>&lt;p&gt;Pre req: All your headings should have the Heading 1 style and sub heading Heading 2 or 3 style applied it them. &lt;/p&gt;&#xA;&lt;p&gt;Next go to &lt;strong&gt;Insert&amp;gt;Index and Tables&amp;gt;Table of Content (tab)&lt;/strong&gt; click ok.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

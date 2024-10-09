@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Quicksilver on Server Notes</title>
+    <link>http://localhost:1313/tags/quicksilver/</link>
+    <description>Recent content in Quicksilver on Server Notes</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 23 Oct 2007 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/quicksilver/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>quicksliver</title>
+      <link>http://localhost:1313/notes/quicksliver/</link>
+      <pubDate>Tue, 23 Oct 2007 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/quicksliver/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;calulator:&lt;/strong&gt; = then type your calculation.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

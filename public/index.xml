@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on Server Notes</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Home on Server Notes</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 28 Mar 2018 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes on AWS</title>
+      <link>http://localhost:1313/notes/kubernetes-on-aws/</link>
+      <pubDate>Wed, 28 Mar 2018 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/kubernetes-on-aws/</guid>
+      <description>&lt;p&gt;Note this only works for k8s 1.5&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Launch AWS post instance cluster&lt;/strong&gt; &lt;code&gt;# make sure awscli is already setup export AWS_S3_REGION=us-east-1 export KUBERNETES_PROVIDER=aws export KUBE_AWS_INSTANCE_PREFIX=dev export KUBE_AWS_ZONE=us-east-1a export MASTER_SIZE=m3.large export NODE_SIZE=r3.2xlarge export NUM_NODES=1 export NODE_SPOT_PRICE=1.33  /path/to/kubernetes/cluster/kube-up.sh&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Cluster info&lt;/strong&gt; &lt;code&gt;kubectl cluster-info&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Get nodes&lt;/strong&gt; &lt;code&gt;kubctl get nodes&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Create pod&lt;/strong&gt; &lt;code&gt;kubectl create -f component/service.yaml&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Delete pod&lt;/strong&gt; &lt;code&gt;kubectl delete -f component/service.yaml&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Shell into container&lt;/strong&gt; &lt;code&gt;kubectl exec -it container-name bash&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Cluster settings&lt;/strong&gt; &lt;code&gt;kubectl config set-credentials admin/dev --username=admin --password=******** kubectl config set-cluster dev --insecure-skip-tls-verify=true --server=https://xx.xx.xx.xx kubectl config set-context dev/admin --user=admin/uat1 --namespace=default --cluster=dev kubectl config use-context dev/admin&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>npm dev setup</title>
+      <link>http://localhost:1313/notes/fe-dev-setup/</link>
+      <pubDate>Tue, 02 Feb 2016 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/fe-dev-setup/</guid>
+      <description>&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# create package.json&#xA;# npm init&#xA;&#xA;# install specific version of npm package&#xA;$ npm install --save react@0.14.7&#xA;&#xA;# browserify&#xA;$ npm install -g browserify&#xA;&#xA;# Babel + browserify&#xA;$ npm install --save-dev babelify&#xA;&#xA;# build&#xA;$ npm run build&#xA;&#xA;# sass&#xA;$npm install --save-dev node-sass&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    <item>
+      <title>elastic search decommission node</title>
+      <link>http://localhost:1313/notes/elastic-search-decommission-node/</link>
+      <pubDate>Tue, 30 Sep 2014 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/elastic-search-decommission-node/</guid>
+      <description>&lt;p&gt;Remove node: [sourcecode language=&amp;ldquo;bash&amp;rdquo;] curl -v -XPUT localhost:9200/_cluster/settings -d &amp;lsquo;{&amp;ldquo;transient&amp;rdquo; :{&amp;ldquo;cluster.routing.allocation.exclude._ip&amp;rdquo; : &amp;ldquo;xxx.xxx.xxx.xxx&amp;rdquo;}}&amp;rsquo; [/sourcecode] Add node back after maintenance: [sourcecode language=&amp;ldquo;bash&amp;rdquo;] curl -v -XPUT localhost:9200/_cluster/settings -d &amp;lsquo;{&amp;ldquo;transient&amp;rdquo; :{&amp;ldquo;cluster.routing.allocation.exclude._ip&amp;rdquo; : &amp;ldquo;&amp;rdquo;}}&amp;rsquo; [/sourcecode]&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>fast linux delete for large directories</title>
+      <link>http://localhost:1313/notes/fast-linux-delete-for-large-directories/</link>
+      <pubDate>Wed, 30 Jul 2014 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/fast-linux-delete-for-large-directories/</guid>
+      <description>&lt;p&gt;Found this to be faster than rm -rf [sourcecode language=&amp;ldquo;bash&amp;rdquo;] mkdir blank rsync -a &amp;ndash;delete blank/ dir-to-delete/ [/sourcecode]&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>elasticsearch test analyzer</title>
+      <link>http://localhost:1313/notes/elasticsearch-test-analyzer/</link>
+      <pubDate>Fri, 16 May 2014 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/elasticsearch-test-analyzer/</guid>
+      <description>&lt;p&gt;[sourcecode language=&amp;ldquo;bash&amp;rdquo;] curl &amp;rsquo;localhost:9200/_analyze?text=the+quick+brown+fox+jumps+over+the+lazy+dog&amp;amp;pretty&amp;amp;analyzer=snowball&amp;rsquo; [/sourcecode]&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>trace webmachine resource</title>
+      <link>http://localhost:1313/notes/trace-webmachine-resource/</link>
+      <pubDate>Thu, 01 May 2014 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/trace-webmachine-resource/</guid>
+      <description>&lt;p&gt;[sourcecode language=&amp;ldquo;erlang&amp;rdquo;] 1&amp;gt; dbg:tracer(). 2&amp;gt; dbg:p(all,[c]). 3&amp;gt; dbg:tp({my_resource, &amp;lsquo;_&amp;rsquo;, &amp;lsquo;_&amp;rsquo;}, []). [/sourcecode]&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>hmac</title>
+      <link>http://localhost:1313/notes/hmac/</link>
+      <pubDate>Thu, 03 Apr 2014 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/hmac/</guid>
+      <description>&lt;p&gt;[sourcecode language=&amp;ldquo;perl&amp;rdquo;] #!/usr/bin/perl use strict; use warnings; use Digest::SHA qw(hmac_sha1_hex); print hmac_sha1_hex(&amp;ldquo;my data&amp;rdquo;, &amp;ldquo;secret key&amp;rdquo;) . &amp;ldquo;\n&amp;rdquo;; [/sourcecode]&lt;/p&gt;&#xA;&lt;p&gt;[sourcecode language=&amp;ldquo;c&amp;rdquo;] #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;stdlib.h&amp;gt; #include &amp;lt;strings.h&amp;gt; #include &amp;lt;openssl/hmac.h&amp;gt; int main() { char* key = &amp;ldquo;secret key&amp;rdquo;; char* data = &amp;ldquo;my data&amp;rdquo;; char tmp[3]; unsigned int result_len, i; unsigned char* result = malloc(sizeof(unsigned char) * result_len); HMAC_CTX ctx; HMAC_CTX_init(&amp;amp;ctx); HMAC_Init_ex(&amp;amp;ctx, (unsigned char*) key, strlen(key), EVP_sha1(), NULL); HMAC_Update(&amp;amp;ctx, (unsigned char*) data, strlen(data)); HMAC_Final(&amp;amp;ctx, result, &amp;amp;result_len); HMAC_CTX_cleanup(&amp;amp;ctx); char* output = malloc(sizeof(char) * result_len); for (i = 0; i != result_len; i++) { //printf(&amp;ldquo;Got %02X at byte %d\n&amp;rdquo;, result[i], i); sprintf(tmp, &amp;ldquo;%02x&amp;rdquo;, result[i]); strcat(output, tmp); } printf(&amp;ldquo;output : %s\n&amp;rdquo;, output); printf(&amp;ldquo;expected: %s\n&amp;rdquo;, &amp;ldquo;97a62219092f3ddab3707cc9e85e63e926f45c87&amp;rdquo;); return 0; } [/sourcecode]&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>sqlite index</title>
+      <link>http://localhost:1313/notes/sqlite-index/</link>
+      <pubDate>Thu, 03 Apr 2014 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/sqlite-index/</guid>
+      <description>&lt;p&gt;[sourcecode language=&amp;ldquo;sql&amp;rdquo;] sqlite&amp;gt; CREATE TABLE dogs (dog_id INTEGER PRIMARY KEY AUTOINCREMENT, dog_name VARCHAR(100), state CHAR(2)); sqlite&amp;gt; CREATE INDEX dog on dogs(state); sqlite&amp;gt; .indices dogs dog sqlite&amp;gt; EXPLAIN QUERY PLAN SELECT dog_name FROM dogs WHERE state=&amp;lsquo;FL&amp;rsquo;; 0|0|TABLE leagues WITH INDEX league [/sourcecode]&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ES optimize index</title>
+      <link>http://localhost:1313/notes/es-optimize-index/</link>
+      <pubDate>Thu, 19 Sep 2013 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/es-optimize-index/</guid>
+      <description>&lt;p&gt;[sourcecode language=&amp;ldquo;bash&amp;rdquo;] # Force ES to free up disk space for deleted docs curl -XPOST &amp;lsquo;http://localhost:9200/_optimize?only_expunge_deletes=true&amp;rsquo;&lt;/p&gt;&#xA;&lt;p&gt;# optimize index into single curl -XPOST &amp;lsquo;http://localhost:9200/_optimize?max_num_segments=1&amp;rsquo; [/sourcecode]&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>imap command line</title>
+      <link>http://localhost:1313/notes/imap-command-line/</link>
+      <pubDate>Fri, 21 Jun 2013 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/imap-command-line/</guid>
+      <description>&lt;p&gt;[sourcecode language=&amp;ldquo;bash&amp;rdquo;] openssl s_client -connect hostname:993 -crlf&lt;/p&gt;&#xA;&lt;p&gt;1 LOGIN username password 2 EXAMINE INBOX 3 UID FETCH 1:* (FLAGS) 4 UID FETCH 1 (BODY.PEEK[HEADER.FIELDS (Date From To Cc Bcc Subject Message-ID In-Reply-To References Content-Type Importance)]) 5 UID FETCH 1 (BODY.PEEK[TEXT]) [/sourcecode]&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>erlang variable memory footprint</title>
+      <link>http://localhost:1313/notes/erlang-variable-memory-footprint/</link>
+      <pubDate>Tue, 21 May 2013 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/erlang-variable-memory-footprint/</guid>
+      <description>&lt;p&gt;[sourcecode language=&amp;ldquo;bash&amp;rdquo;] erts_debug:flat_size(Term) [/sourcecode]&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>gcc gdb</title>
+      <link>http://localhost:1313/notes/gcc-gdb/</link>
+      <pubDate>Thu, 09 Aug 2012 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/gcc-gdb/</guid>
+      <description>&lt;p&gt;[sourcecode language=&amp;ldquo;bash&amp;rdquo;] gcc -ggdb -std=c99 -Wall -Werror [/sourcecode]&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>lzo stdin stdout decompression</title>
+      <link>http://localhost:1313/notes/lzo-stdin-stdout-decompression/</link>
+      <pubDate>Thu, 26 Jan 2012 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/lzo-stdin-stdout-decompression/</guid>
+      <description>&lt;p&gt;[sourcecode language=&amp;ldquo;bash&amp;rdquo;] hadoop fs -cat test/part-00000.lzo | lzop -df [/sourcecode]&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>seq leading zero</title>
+      <link>http://localhost:1313/notes/seq-leading-zero/</link>
+      <pubDate>Thu, 26 Jan 2012 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/seq-leading-zero/</guid>
+      <description>&lt;p&gt;[sourcecode language=&amp;ldquo;bash&amp;rdquo;] seq -f &amp;ldquo;%02g&amp;rdquo; 1 1 24 [/sourcecode]&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>lion macports erlang compilation patch</title>
+      <link>http://localhost:1313/notes/lion-macports-erlang-compilation-patch/</link>
+      <pubDate>Sun, 06 Nov 2011 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/lion-macports-erlang-compilation-patch/</guid>
+      <description>&lt;p&gt;Add the following under &amp;ldquo;platform darwin 11&amp;rdquo; [sourcecode language=&amp;ldquo;cpp&amp;rdquo;] if {${configure.compiler} == &amp;ldquo;clang&amp;rdquo;} { configure.compiler llvm-gcc-4.2 } configure.cflags-delete &amp;ldquo;-std=c99&amp;rdquo; configure.cflags-delete -O2 configure.cxxflags-delete -O2 configure.cflags-append -O0 configure.cxxflags-append -O0 &amp;hellip;. [/sourcecode]&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Varnish</title>
+      <link>http://localhost:1313/notes/varnish/</link>
+      <pubDate>Mon, 12 Sep 2011 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/varnish/</guid>
+      <description>&lt;p&gt;Commands&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;varnishlog - log&lt;/li&gt;&#xA;&lt;li&gt;varnishncsa - apache style varnish log&lt;/li&gt;&#xA;&lt;li&gt;vanishtop - top&lt;/li&gt;&#xA;&lt;li&gt;varnishd -s malloc,1G -f /path/to/name.vcl&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>netbeans jetty maven debug</title>
+      <link>http://localhost:1313/notes/netbeans-jetty-maven-debug/</link>
+      <pubDate>Mon, 27 Jun 2011 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/netbeans-jetty-maven-debug/</guid>
+      <description>&lt;ol&gt;&#xA;&lt;li&gt;&lt;code&gt;export MAVEN_OPTS=&amp;quot;-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8000&amp;quot;&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Debug -&amp;gt; Attach Debugger, enter 8000 as the port&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>awk convert csv</title>
+      <link>http://localhost:1313/notes/awk-convert-csv/</link>
+      <pubDate>Thu, 19 May 2011 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/awk-convert-csv/</guid>
+      <description>&lt;p&gt;convert file with :: delimiter into csv: &lt;code&gt;awk -v &#39;FS=::&#39; &#39;{print $1 &amp;quot;,&amp;quot; $2 &amp;quot;,&amp;quot; $3}&#39; ratings.dat &amp;gt;&amp;gt; ratings.csv&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>rebar templates</title>
+      <link>http://localhost:1313/notes/rebar-templates/</link>
+      <pubDate>Sun, 06 Feb 2011 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/rebar-templates/</guid>
+      <description>&lt;p&gt;[sourcecode language=&amp;ldquo;bash&amp;rdquo;] # OTP application: $ rebar create-app appid=app_name&lt;/p&gt;&#xA;&lt;p&gt;# gen_server: $ rebar create template=simplesrv srvid=server_name [/sourcecode]&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>tcpdump</title>
+      <link>http://localhost:1313/notes/tcpdump/</link>
+      <pubDate>Mon, 24 Jan 2011 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/tcpdump/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;code&gt;sudo tcpdump -A -s 0 -i en1&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>macports package contents</title>
+      <link>http://localhost:1313/notes/macports-package-contents/</link>
+      <pubDate>Sat, 18 Dec 2010 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/macports-package-contents/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;code&gt;port contents &amp;lt;package_name&amp;gt;&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>create blank maven project</title>
+      <link>http://localhost:1313/notes/create-blank-maven-project/</link>
+      <pubDate>Tue, 23 Nov 2010 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/create-blank-maven-project/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;code&gt;mvn archetype:create \ -DarchetypeGroupId=org.apache.maven.archetypes \ -DgroupId=com.mycompany.app \ -DartifactId=my-app&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>ControlTier commands</title>
+      <link>http://localhost:1313/notes/controltier-commands/</link>
+      <pubDate>Sat, 04 Sep 2010 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/controltier-commands/</guid>
+      <description>&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Add Project to Node&lt;/strong&gt; &lt;code&gt;ctl-depot -p my-project -a create  &lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Install Project on Node&lt;/strong&gt; &lt;code&gt;ctl-depot -p my-project -a install  &lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Create Site&lt;/strong&gt; Get site XML template from &lt;a href=&#34;http://controltier.org/wiki/Mock_Site_Example&#34;&gt;http://controltier.org/wiki/Mock_Site_Example&lt;/a&gt; (look for &amp;ldquo;The Site definition&amp;rdquo;) &lt;code&gt;ctl -p my-project -m ProjectBuilder -c load-objects -- -filename site.xml&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Create Service&lt;/strong&gt; Get service XML template from &lt;a href=&#34;http://controltier.org/wiki/Category:Service&#34;&gt;http://controltier.org/wiki/Category:Service&lt;/a&gt; &lt;code&gt;ctl -p my-project -m ProjectBuilder -c load-objects -- -filename service.xml&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Create Package&lt;/strong&gt; Get Package XML template from &lt;a href=&#34;http://controltier.org/wiki/Package&#34;&gt;http://controltier.org/wiki/Package&lt;/a&gt; &lt;code&gt;ctl -p my-project -m ProjectBuilder -c load-objects -- -filename package.xml&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;List Sites&lt;/strong&gt; &lt;code&gt;ctl -p my-project -m ProjectBuilder -c find-objects -- -type Site&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;List Services&lt;/strong&gt; &lt;code&gt;ctl -p my-project -m ProjectBuilder -c find-objects -- -type Service&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;List Packages&lt;/strong&gt; &lt;code&gt;ctl -p my-project -m ProjectBuilder -c find-objects -- -type Package&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;List Project objects&lt;/strong&gt; &lt;code&gt;ctl -p my-project -m ProjectBuilder -c find-objects --&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Add Resource relationship&lt;/strong&gt; &lt;code&gt;ctl -p my-project -m modelutil -c resource-add -- -name QA -type Site -resourcename my-project-1.0.0 -resourcetype Site&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Remove Resource relationship&lt;/strong&gt; &lt;code&gt;ctl -p my-project -m modelutil -c resource-remove -- -name QA -type Site -resourcename my-project-1.0.0 -resourcetype Site&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Deploy Site&lt;/strong&gt; &lt;code&gt;ctl -p my-project -t Site -o CI -c Deploy&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Find Nodes Service will deploy to&lt;/strong&gt; &lt;code&gt;grep Service.my-project-ws-ci ~/ctl/depots/my-project/etc/deployments.properties&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Remove Node from Service&lt;/strong&gt; &lt;code&gt;ctl -p my-project -m modelutil -c resource-remove -- -name node01.dev -type Node -resourcename my-project-ws-0.0.1 -resourcetype Service&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Run command on Node(s) with tag&lt;/strong&gt; &lt;code&gt;ctl-exec -p my-project -I tags=qa -- whoami&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>ControlTier Yum</title>
+      <link>http://localhost:1313/notes/controltier-yum/</link>
+      <pubDate>Sat, 04 Sep 2010 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/controltier-yum/</guid>
+      <description>&lt;p&gt;ControlTier 3.4.x doesn&amp;rsquo;t include a yum module by default. I found &lt;a href=&#34;http://groups.google.com/group/controltier/browse_thread/thread/26b5fcc0fa38be54&#34;&gt;this&lt;/a&gt; discussion in the mailing list which allowed me to achieve what I wanted. Following are instructions on installing the custom module, perform this on your CT server.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Download YumModules.zip (found in the above link)&lt;/li&gt;&#xA;&lt;li&gt;mkdir -p /tmp/scratch/modules&lt;/li&gt;&#xA;&lt;li&gt;mv YumModules.zip /tmp/scratch&lt;/li&gt;&#xA;&lt;li&gt;cd /tmp/scratch&lt;/li&gt;&#xA;&lt;li&gt;unzip YumModules.zip -d modules&lt;/li&gt;&#xA;&lt;li&gt;ctl -p my-project -m ProjectBuilder -c build-library &amp;ndash; -name yum -basedir /tmp/scratch -targetdir /tmp/target -upload&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;You may have to run install command on all your nodes to pickup the new module.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>mysql utf8</title>
+      <link>http://localhost:1313/notes/mysql-utf8/</link>
+      <pubDate>Thu, 26 Aug 2010 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/mysql-utf8/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;code&gt;[mysqld] default-character-set=utf8 character-set-server=utf8 collation-server=utf8_unicode_ci&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;[mysql] default-character-set=utf8&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>git files changed after pull</title>
+      <link>http://localhost:1313/notes/git-files-changed-after-pull/</link>
+      <pubDate>Wed, 18 Aug 2010 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/git-files-changed-after-pull/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;code&gt;git diff --name-only @{1}&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>git cherry pick file</title>
+      <link>http://localhost:1313/notes/git-cherry-pick-file/</link>
+      <pubDate>Fri, 23 Jul 2010 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/git-cherry-pick-file/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;code&gt;$ git log path/to/file $ git checkout &amp;lt;branch to merge into&amp;gt; $ git cherry-pick -x &amp;lt;commit sha&amp;gt;&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>find out which linux distribution you are running</title>
+      <link>http://localhost:1313/notes/find-out-which-linux-distribution-you-are-running/</link>
+      <pubDate>Thu, 08 Jul 2010 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/find-out-which-linux-distribution-you-are-running/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;code&gt;cat /etc/*-release&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>email address validation regular expression</title>
+      <link>http://localhost:1313/notes/email-address-validation-regular-expression/</link>
+      <pubDate>Sat, 29 May 2010 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/email-address-validation-regular-expression/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;code&gt;/^([\w\!\#$\%\&amp;amp;\&#39;\*\+\-\/\=\?\^\`{\|\}\~]+\.)*[\w\!\#$\%\&amp;amp;\&#39;\*\+\-\/\=\?\^\`{\|\}\~]+@((((([a-z0-9]{1}[a-z0-9\-]{0,62}[a-z0-9]{1})|[a-z])\.)+[a-z]{2,6})|(\d{1,3}\.){3}\d{1,3}(\:\d{1,5})?)$/i&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>hdfs ext3</title>
+      <link>http://localhost:1313/notes/hdfs-ext3/</link>
+      <pubDate>Sat, 29 May 2010 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/hdfs-ext3/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;When mounting ext3 file systems for hadoop data nodes, make sure you include noatime in fstab.&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>sysbench</title>
+      <link>http://localhost:1313/notes/sysbench/</link>
+      <pubDate>Mon, 26 Apr 2010 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/sysbench/</guid>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;sysbench --test=oltp --mysql-table=myisam --oltp-table-size=1000000 --mysql-socket/tmp/mysql.sock prepare&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;sysbench --num-threads=16 --max-requests=100000 --test=oltp --oltp-table-size=1000000 --mysql-socket=/tmp/mysql.sock --oltp-read-only run&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>linux daemons listening</title>
+      <link>http://localhost:1313/notes/linux-daemons-listening/</link>
+      <pubDate>Sun, 28 Mar 2010 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linux-daemons-listening/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;netstat -pntl&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>vim save file without permission</title>
+      <link>http://localhost:1313/notes/vim-save-file-without-permission/</link>
+      <pubDate>Sun, 28 Mar 2010 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/vim-save-file-without-permission/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;:w !sudo tee %&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>git pretty log</title>
+      <link>http://localhost:1313/notes/git-pretty-log/</link>
+      <pubDate>Mon, 21 Sep 2009 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/git-pretty-log/</guid>
+      <description>&lt;p&gt;[sourcecode language=&amp;ldquo;bash&amp;rdquo;] git config &amp;ndash;global alias.lol &amp;ldquo;log &amp;ndash;pretty=oneline &amp;ndash;abbrev-commit &amp;ndash;graph &amp;ndash;decorate&amp;rdquo; [/sourcecode] or [sourcecode language=&amp;ldquo;bash&amp;rdquo;] git config &amp;ndash;global alias.lg &amp;ldquo;log &amp;ndash;graph &amp;ndash;pretty=format:&amp;rsquo;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset&amp;rsquo; &amp;ndash;abbrev-commit &amp;ndash;date=relative&amp;rdquo; [/sourcecode]&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>git color</title>
+      <link>http://localhost:1313/notes/git-color/</link>
+      <pubDate>Sun, 13 Sep 2009 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/git-color/</guid>
+      <description>&lt;p&gt;[sourcecode language=&amp;ldquo;bash&amp;rdquo;] git config &amp;ndash;global color.ui true [/sourcecode]&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>mac os x terminal pipe to clipboard</title>
+      <link>http://localhost:1313/notes/mac-os-x-terminal-pipe-to-clipboard/</link>
+      <pubDate>Mon, 07 Sep 2009 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/mac-os-x-terminal-pipe-to-clipboard/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;cat file.txt | pbcopy&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>sqlite query index</title>
+      <link>http://localhost:1313/notes/sqlite-query-index/</link>
+      <pubDate>Sat, 29 Aug 2009 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/sqlite-query-index/</guid>
+      <description>&lt;p&gt;Here is a basic intro to sqlite indexes.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;sqlite&amp;gt; CREATE TABLE dogs (dog_id INTEGER PRIMARY KEY AUTOINCREMENT, dog_name VARCHAR(100), state CHAR(2));&lt;/p&gt;&#xA;&lt;p&gt;sqlite&amp;gt; CREATE INDEX dog on dogs(state);&lt;/p&gt;&#xA;&lt;p&gt;sqlite&amp;gt; .indices dogs dog&lt;/p&gt;&#xA;&lt;p&gt;sqlite&amp;gt; EXPLAIN QUERY PLAN SELECT dog_name FROM dogs WHERE state=&amp;lsquo;FL&amp;rsquo;; 0|0|TABLE leagues WITH INDEX league&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>color grep less</title>
+      <link>http://localhost:1313/notes/color-grep-less/</link>
+      <pubDate>Mon, 25 May 2009 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/color-grep-less/</guid>
+      <description>&lt;p&gt;Add this in your bashrc&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;code&gt;alias grep=&#39;grep --color=always&#39;; alias less=&#39;less -R&#39;;&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>erlang version</title>
+      <link>http://localhost:1313/notes/erlang-version/</link>
+      <pubDate>Sat, 23 May 2009 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/erlang-version/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;erlang:system_info(otp_release).&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>php curl multi</title>
+      <link>http://localhost:1313/notes/php-curl-multi/</link>
+      <pubDate>Wed, 13 May 2009 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/php-curl-multi/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;code&gt;&amp;lt;?php $url = array(&#39;http://www.google.com&#39;, &#39;http://www.yahoo.com&#39;); $counter = 0; $multi = curl_multi_init();  foreach ($url as $requestURL) { ${&#39;curl&#39; . $counter} = curl_init(); curl_setopt(${&#39;curl&#39; . $counter}, CURLOPT_URL, $requestURL); curl_setopt(${&#39;curl&#39; . $counter}, CURLOPT_HEADER, 0); curl_setopt(${&#39;curl&#39; . $counter}, CURLOPT_FOLLOWLOCATION, 1); curl_setopt(${&#39;curl&#39; . $counter}, CURLOPT_SSL_VERIFYPEER, false); curl_setopt(${&#39;curl&#39; . $counter}, CURLOPT_RETURNTRANSFER, 1); curl_setopt(${&#39;curl&#39; . $counter}, CURLOPT_USERAGENT, &#39;Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.3) Gecko/20070309 Firefox/2.0.0.3&#39;); curl_multi_add_handle($multi, ${&#39;curl&#39; . $counter});  $counter++; }  $running = 0; do { curl_multi_exec($multi, $running); } while ($running &amp;gt; 0);  $counter = 0; $response = array();  foreach ($url as $requestURL) { $response[$requestURL] = curl_multi_getcontent(${&#39;curl&#39; . $counter}); curl_multi_remove_handle($multi, ${&#39;curl&#39; . $counter});  $counter++; }  curl_multi_close($multi); print_r($response); ?&amp;gt;&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>find multiple files</title>
+      <link>http://localhost:1313/notes/find-multiple-files/</link>
+      <pubDate>Fri, 06 Feb 2009 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/find-multiple-files/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;code&gt;find . -name file1.txt  -o -name file2.txt -o -name file3.txt&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>fix mysql relay log</title>
+      <link>http://localhost:1313/notes/fix-mysql-relay-log/</link>
+      <pubDate>Mon, 02 Feb 2009 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/fix-mysql-relay-log/</guid>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;SHOW SLAVE STATUS //note relay_master_log_pos and exec_master_log_pos&lt;/li&gt;&#xA;&lt;li&gt;SLAVE STOP&lt;/li&gt;&#xA;&lt;li&gt;CHANGE MASTER TO MASTER_LOG_FILE=[relay_master_log_pos value], MASTER_LOG_POS=[exec_master_log_pos]&lt;/li&gt;&#xA;&lt;li&gt;SLAVE START&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>sync date time with ntp client</title>
+      <link>http://localhost:1313/notes/sync-date-time-with-ntp-client/</link>
+      <pubDate>Mon, 02 Feb 2009 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/sync-date-time-with-ntp-client/</guid>
+      <description>&lt;p&gt;ntpdate -u ntp.host.com&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ssh proxy firefox</title>
+      <link>http://localhost:1313/notes/ssh-proxy-firefox/</link>
+      <pubDate>Wed, 14 Jan 2009 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/ssh-proxy-firefox/</guid>
+      <description>&lt;p&gt;ssh into you trusted server&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;code&gt;ssh -C2qTnN -D 9999 hostname.com&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;enter you password when prompted for it, your terminal will remain blank after successful login(due to -N). Next setup firefox with following SOCKS setting:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;SOCKS HOST: localhost, Port: 9999&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>vim utf8</title>
+      <link>http://localhost:1313/notes/vim-utf8/</link>
+      <pubDate>Sun, 14 Dec 2008 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/vim-utf8/</guid>
+      <description>&lt;p&gt;Add the following to your vimrc&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;set encoding=utf-8&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>gentoo add user</title>
+      <link>http://localhost:1313/notes/gentoo-add-user/</link>
+      <pubDate>Thu, 04 Dec 2008 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/gentoo-add-user/</guid>
+      <description>&lt;p&gt;Add a new user called &amp;lsquo;username&amp;rsquo; to users and wheel group, the wheel group will allow you to su&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;useradd -m -G users,wheel username&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;then&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;passwd username&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>telnet port 80</title>
+      <link>http://localhost:1313/notes/telnet-port-80/</link>
+      <pubDate>Tue, 18 Nov 2008 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/telnet-port-80/</guid>
+      <description>&lt;p&gt;telnet hostname 80 Escape character is &amp;lsquo;^]&amp;rsquo;.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;GET / HTTP/1.0 Host: hostname&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>twitter api php curl post</title>
+      <link>http://localhost:1313/notes/twitter-api-php-curl-post/</link>
+      <pubDate>Thu, 13 Nov 2008 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/twitter-api-php-curl-post/</guid>
+      <description>&lt;p&gt;Lets try a simple api call to delete a certain tweet of the user.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;code&gt;$tweetID = &#39;1234&#39; $username = &#39;enter_username&#39;; $password = &#39;enter_password&#39;;  $url = &#39;http://twitter.com/statuses/destroy/&#39; . $tweetID . &#39;.xml&#39;;  $curl = curl_init($url); curl_setopt($curl, CURLOPT_USERPWD, $username.&#39;:&#39;.$password); curl_setopt($curl, CURLOPT_POST, 1); curl_setopt($curl, CURLOPT_HEADER, 0); curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1); curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false); curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1); curl_setopt($curl, CURLOPT_USERAGENT, &#39;Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.3) Gecko/20070309 Firefox/2.0.0.3&#39;);  echo $rsp = curl_exec($curl); curl_close($curl); unset($curl);&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>gentoo apache2 userdir</title>
+      <link>http://localhost:1313/notes/gentoo-apache2-userdir/</link>
+      <pubDate>Sat, 08 Nov 2008 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/gentoo-apache2-userdir/</guid>
+      <description>&lt;p&gt;edit file&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;/etc/conf.d/apache2&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;append&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;-D USERDIR&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;to APACHE2_OPTS&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>cvs checkout in custom directory</title>
+      <link>http://localhost:1313/notes/cvs-checkout-in-custom-directory/</link>
+      <pubDate>Mon, 03 Nov 2008 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/cvs-checkout-in-custom-directory/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;cvs co -d dir_name company/project&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>Concatenate nsstring</title>
+      <link>http://localhost:1313/notes/concatenate-nsstring/</link>
+      <pubDate>Sat, 01 Nov 2008 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/concatenate-nsstring/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;code&gt;**NSString** *path = @&amp;quot;~&amp;quot;; **NSString** *absolutePath = [path **stringByExpandingTildeInPath**];  **NSLog**( [@&amp;quot;My folder is at&#39;&amp;quot; **stringByAppendingString**:absolutePath]); // or just use this **NSLog**( @&amp;quot;My folder is at&#39;%@&#39;&amp;quot;, absolutePath);&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Also note that NSString cannot be modified once you have initialized it. Use NSMutableString if you need modify a string.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;code&gt;**NSMutableString** *logString = [[**NSMutableString** alloc] **initWithString**: @&amp;quot;Process Name: &#39;&amp;quot;]; [logString **appendString**: [[**NSProcessInfo** processInfo] **processName**]]; [logString **appendString**: @&amp;quot;&#39; Process ID: &#39;&amp;quot;]; [logString **appendFormat**: @&amp;quot;%d&amp;quot;, [[**NSProcessInfo** processInfo] processIdentifier]]; //cast int into string [logString **appendString**: @&amp;quot;&#39;&amp;quot;];&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>php curl post cookies</title>
+      <link>http://localhost:1313/notes/php-curl-post-cookies/</link>
+      <pubDate>Fri, 31 Oct 2008 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/php-curl-post-cookies/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;code&gt;$file = tempnam(&#39;/tmp&#39;, &#39;tmp_browser_cookie&#39;); $url = &amp;quot;http://www.example.com/login.php&amp;quot;;  $postData =  email=&#39;. urlencode(&#39;myemail@yahoo.com&#39;) . &#39;&amp;amp;pass=&#39; . urlencode(&#39;mypassword&#39;);  $curl = curl_init($url); curl_setopt($curl, CURLOPT_POSTFIELDS, $postData); curl_setopt($curl, CURLOPT_POST, 1); curl_setopt($curl, CURLOPT_HEADER, 0); curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1); curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false); curl_setopt($curl, CURLOPT_COOKIEJAR, $file); curl_setopt($curl, CURLOPT_COOKIEFILE, $file); curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1); curl_setopt($curl, CURLOPT_USERAGENT, &amp;quot;Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.3) Gecko/20070309 Firefox/2.0.0.3&amp;quot;);  echo $rsp = curl_exec($curl); curl_close($curl); unset($curl);  echo file_get_contents($file); unlink($file);&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>diff files recursively in different directories</title>
+      <link>http://localhost:1313/notes/diff-files-recursively-in-different-directories/</link>
+      <pubDate>Fri, 29 Aug 2008 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/diff-files-recursively-in-different-directories/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;code&gt;for i in `find . -type f | grep -v CVS`; do diff $i ${i/./~/dev_stage/websites/www/v2/share/htdocs};done;&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>mysql command line client prompt</title>
+      <link>http://localhost:1313/notes/mysql-command-line-client-prompt/</link>
+      <pubDate>Fri, 22 Aug 2008 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/mysql-command-line-client-prompt/</guid>
+      <description>&lt;p&gt;I usually like to change the default mysql client prompt to user@hostname:dbname &amp;gt;. Open my.cnf and replace prompt = &amp;quot;&amp;quot; with&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;code&gt;prompt = &amp;quot;\u@\h:\d &amp;gt;&amp;quot;&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>gentoo list installed packages</title>
+      <link>http://localhost:1313/notes/gentoo-list-installed-packages/</link>
+      <pubDate>Sat, 16 Aug 2008 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/gentoo-list-installed-packages/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;equery list&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;emerge app-portage/gentoolkit if you already haven&amp;rsquo;t.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mac keyboard shortcuts for accents</title>
+      <link>http://localhost:1313/notes/mac-keyboard-shortcuts-for-accents/</link>
+      <pubDate>Sat, 19 Jul 2008 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/mac-keyboard-shortcuts-for-accents/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;</description>
+    </item>
+    <item>
+      <title>Recursively add files to cvs</title>
+      <link>http://localhost:1313/notes/recursively-add-files-to-cvs/</link>
+      <pubDate>Wed, 30 Apr 2008 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/recursively-add-files-to-cvs/</guid>
+      <description>&lt;p&gt;Let say we have the following directory structure&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;project&#xA;&lt;ul&gt;&#xA;&lt;li&gt;one&lt;/li&gt;&#xA;&lt;li&gt;two&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;add the root directory (project) &lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;cvs add project &lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;cvs ci project&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;cd project&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;find all directories&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;find . -type d -print | grep -v CVS | xargs cvs add&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;cvs ci&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;find all files other than CVS and .&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;code&gt;find . -type f -print | grep -v CVS | grep &amp;quot;^\.\/&amp;quot; |xargs cvs add&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;cvs ci&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>simple apache rewrite</title>
+      <link>http://localhost:1313/notes/simple-apache-rewrite/</link>
+      <pubDate>Tue, 08 Apr 2008 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/simple-apache-rewrite/</guid>
+      <description>&lt;p&gt;RewriteEngine   On&lt;/p&gt;&#xA;&lt;p&gt;RewriteCond     %{REQUEST_FILENAME}  !-d&lt;/p&gt;&#xA;&lt;p&gt;RewriteRule     ^/user/authenticate /path/to/file/auth.php&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>list jar contents</title>
+      <link>http://localhost:1313/notes/list-jar-contents/</link>
+      <pubDate>Tue, 01 Apr 2008 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/list-jar-contents/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;jar -tfv myjarfile.jar&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>vim cursor key navigation</title>
+      <link>http://localhost:1313/notes/vi-cursor-key-navigation/</link>
+      <pubDate>Thu, 13 Mar 2008 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/vi-cursor-key-navigation/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;set term=linux&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>http load test</title>
+      <link>http://localhost:1313/notes/http-load-test/</link>
+      <pubDate>Wed, 05 Mar 2008 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/http-load-test/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;http_load -parallel 5 -fetches 1000 urls.txt&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>valgrind</title>
+      <link>http://localhost:1313/notes/valgrind/</link>
+      <pubDate>Wed, 05 Mar 2008 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/valgrind/</guid>
+      <description>&lt;p&gt;[sourcecode language=&amp;ldquo;bash&amp;rdquo;] valgrind &amp;ndash;tool=callgrind &amp;ndash;dump-instr=yes &amp;ndash;trace-jump=yes -v /usr/sbin/apache -X [/sourcecode]&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>bash for loop through numbers</title>
+      <link>http://localhost:1313/notes/bash-for-loop-through-numbers/</link>
+      <pubDate>Mon, 03 Mar 2008 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/bash-for-loop-through-numbers/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;code&gt;# for i in `seq 1 10`; do mysql -uusername -ppassword database_name -e &amp;quot;SELECT COUNT(*) FROM table$i&amp;quot;;done;&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>bash for loop through text</title>
+      <link>http://localhost:1313/notes/bash-for-loop-through-text/</link>
+      <pubDate>Mon, 03 Mar 2008 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/bash-for-loop-through-text/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;code&gt;# for i in `echo &amp;quot;table1 table2 table3&amp;quot;`; do mysql -uusername -ppassword database_name -e &amp;quot;SELECT COUNT(*) FROM $i&amp;quot;;done;&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>iptables block ip address</title>
+      <link>http://localhost:1313/notes/iptables-block-ip-address/</link>
+      <pubDate>Mon, 25 Feb 2008 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/iptables-block-ip-address/</guid>
+      <description>&lt;p&gt;block ip address eg: 000.000.000.000&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;iptables -I INPUT -s  000.000.000.000 -j DROP&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>iptables list</title>
+      <link>http://localhost:1313/notes/iptables-list/</link>
+      <pubDate>Mon, 25 Feb 2008 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/iptables-list/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;iptables -L -n&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>oop javascript</title>
+      <link>http://localhost:1313/notes/oop-javascript/</link>
+      <pubDate>Tue, 12 Feb 2008 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/oop-javascript/</guid>
+      <description>&lt;p&gt;function Car (pMake, pModel, pColor){&lt;/p&gt;&#xA;&lt;p&gt;this.make = pMake&lt;/p&gt;&#xA;&lt;p&gt;this.model = pModel&lt;/p&gt;&#xA;&lt;p&gt;this.color = pColor&lt;/p&gt;&#xA;&lt;p&gt;}&lt;/p&gt;&#xA;&lt;p&gt;Car.prototype.showCar = function {&lt;/p&gt;&#xA;&lt;p&gt;alert(this.make + &amp;quot; &amp;quot; + this.model + &amp;quot; &amp;quot; + this.color);&lt;/p&gt;&#xA;&lt;p&gt;}&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>perforce find files not in depot</title>
+      <link>http://localhost:1313/notes/perforce-find-files-not-in-depot/</link>
+      <pubDate>Tue, 29 Jan 2008 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/perforce-find-files-not-in-depot/</guid>
+      <description>&lt;p&gt;Here is how you find files not added to depot:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;find . ! -type d | xargs p4 have 2&amp;gt;&amp;amp;1 &amp;gt; /dev/null&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>MS Word insert table of contents</title>
+      <link>http://localhost:1313/notes/ms-word-insert-table-of-contents/</link>
+      <pubDate>Tue, 22 Jan 2008 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/ms-word-insert-table-of-contents/</guid>
+      <description>&lt;p&gt;Pre req: All your headings should have the Heading 1 style and sub heading Heading 2 or 3 style applied it them. &lt;/p&gt;&#xA;&lt;p&gt;Next go to &lt;strong&gt;Insert&amp;gt;Index and Tables&amp;gt;Table of Content (tab)&lt;/strong&gt; click ok.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>command line execute with previous command args</title>
+      <link>http://localhost:1313/notes/command-line-execute-with-previous-command-args/</link>
+      <pubDate>Tue, 08 Jan 2008 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/command-line-execute-with-previous-command-args/</guid>
+      <description>&lt;p&gt;Problem:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt; ls /some/long/path/to/directory/     &lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;now you want to cd into this directory and you are lazy &lt;/p&gt;&#xA;&lt;p&gt;Solution:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt; cd !$     &lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;yay unix greatness!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>perforce merge branch</title>
+      <link>http://localhost:1313/notes/perforce-merging-branch/</link>
+      <pubDate>Tue, 08 Jan 2008 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/perforce-merging-branch/</guid>
+      <description>&lt;p&gt;To merge changes from the secondary to the main branch&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;make sure you have both the main and secondary branch in p4 client&lt;/li&gt;&#xA;&lt;li&gt;go to the main branch directory &lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;p4 integrate /file/path/to/secondary/branch/file.ext /file/path/to/main/branch/file.ext&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;p4 resolve  /file/path/to/main/branch/file.ext&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;p4 submit&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>perforce sync changes from main branch</title>
+      <link>http://localhost:1313/notes/perforce-sync-changes-from-main-branch/</link>
+      <pubDate>Tue, 08 Jan 2008 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/perforce-sync-changes-from-main-branch/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;p4 integrate -b childBranchName&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;p4 resolve -as&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;p4 submit&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>grep wildcard</title>
+      <link>http://localhost:1313/notes/grep-wildcard/</link>
+      <pubDate>Thu, 13 Dec 2007 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/grep-wildcard/</guid>
+      <description>&lt;p&gt;Searches for a line with class*module* &lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;grep -Rni &amp;lsquo;class.*module.*&amp;rsquo; *&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>rsync over ssh</title>
+      <link>http://localhost:1313/notes/rsync-over-ssh/</link>
+      <pubDate>Thu, 13 Dec 2007 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/rsync-over-ssh/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;rsync -truve ssh /local/dir/to/copy/* remoteServer:/path/to/save/&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>Using SSH as Proxy server</title>
+      <link>http://localhost:1313/notes/using-ssh-as-proxy-server/</link>
+      <pubDate>Fri, 30 Nov 2007 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/using-ssh-as-proxy-server/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;ssh -ND 9999 &lt;a href=&#34;mailto:user@hostname.com&#34;&gt;user@hostname.com&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>safari enable debug menu</title>
+      <link>http://localhost:1313/notes/safari-enable-debug-menu/</link>
+      <pubDate>Sun, 18 Nov 2007 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/safari-enable-debug-menu/</guid>
+      <description>&lt;p&gt;Mac: &lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;defaults write com.apple.Safari IncludeDebugMenu 1&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Windows: Edit&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;C:\Documents and Settings\USERNAME\Application Data\Apple Computer\Safari\Preferences&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;add the following line&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;IncludeDebugMenu&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Sun, 11 Nov 2007 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;p&gt;Welcome to server notes.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Transparent Flash movie</title>
+      <link>http://localhost:1313/notes/transparent-flash-movie/</link>
+      <pubDate>Fri, 09 Nov 2007 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/transparent-flash-movie/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>exec command on find results</title>
+      <link>http://localhost:1313/notes/exec-command-on-find-results/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/exec-command-on-find-results/</guid>
+      <description>&lt;p&gt;Use this for small list of files, for better performance use xargs.&lt;/p&gt;&#xA;&lt;p&gt;find . -name *.conf -exec cp &amp;lsquo;{}&amp;rsquo; /etc/apache/include/ \;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>mysql command line autocomplete rescan/enable</title>
+      <link>http://localhost:1313/notes/mysql-command-line-autocomplete-rescanenable/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/mysql-command-line-autocomplete-rescanenable/</guid>
+      <description>&lt;p&gt;mysql&amp;gt;\#&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>perforce equivalent cvs commands</title>
+      <link>http://localhost:1313/notes/perforce-commands/</link>
+      <pubDate>Thu, 08 Nov 2007 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/perforce-commands/</guid>
+      <description>&lt;p&gt;add = p4 add file.name&lt;br&gt;&#xA;checkout = p4 sync&lt;br&gt;&#xA;p4 edit file.name (do this before you make any changes)&lt;br&gt;&#xA;diff = p4 diff file.name&lt;br&gt;&#xA;commit = p4 submit file.name&lt;br&gt;&#xA;p4 revert file.name (close file without doing any changes)&lt;br&gt;&#xA;log = p4 filelog file.name&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Duplicating gentoo packages to a new machine</title>
+      <link>http://localhost:1313/notes/migrating-gentoo-to-a-new-machine/</link>
+      <pubDate>Wed, 24 Oct 2007 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/migrating-gentoo-to-a-new-machine/</guid>
+      <description>&lt;p&gt;Simply copy /var/lib/portage/world from the old machine to the new one. Then:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;# emerge -va &amp;ndash;noreplace $(cat old_world_file)&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;This command will install all of the files in the old_world_file while also adding them to the world of the new machine. The &amp;ndash;noreplace was added in case some packages had already been installed, in order to avoid repeating one&amp;rsquo;s self.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Impossible WHERE noticed after reading const tables</title>
+      <link>http://localhost:1313/notes/impossible-where-noticed-after-reading-const-tables/</link>
+      <pubDate>Wed, 24 Oct 2007 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/impossible-where-noticed-after-reading-const-tables/</guid>
+      <description>&lt;p&gt;MySQL has read all const (and system) tables and notice that the WHERE clause is always false.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Restore deleted ._cfg files</title>
+      <link>http://localhost:1313/notes/restore-deleted-_cfg-files/</link>
+      <pubDate>Wed, 24 Oct 2007 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/restore-deleted-_cfg-files/</guid>
+      <description>&lt;p&gt;With &amp;ndash;noconfmem, portage will &amp;ldquo;forget&amp;rdquo; that it has already made a ._cfg file for a CONFIG_PROTECT file, thus causing portage to reinstall the ._cfg file needed for updating.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>CVS diff different versions of the file</title>
+      <link>http://localhost:1313/notes/cvs-things-to-remember/</link>
+      <pubDate>Tue, 23 Oct 2007 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/cvs-things-to-remember/</guid>
+      <description>&lt;p&gt;&lt;code&gt;cvs diff -u -r 1.42 -r 1.43 classes/someClass.php&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>cvs rollback</title>
+      <link>http://localhost:1313/notes/cvs-rollback/</link>
+      <pubDate>Tue, 23 Oct 2007 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/cvs-rollback/</guid>
+      <description>&lt;p&gt;cvs up -j 1.43 -j 1.42 classes/someClass.php&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>List freeBSD kernel modules</title>
+      <link>http://localhost:1313/notes/list-freebsd-kernel-modules/</link>
+      <pubDate>Tue, 23 Oct 2007 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/list-freebsd-kernel-modules/</guid>
+      <description>&lt;p&gt;kldstat&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>quicksliver</title>
+      <link>http://localhost:1313/notes/quicksliver/</link>
+      <pubDate>Tue, 23 Oct 2007 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/quicksliver/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;calulator:&lt;/strong&gt; = then type your calculation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>remote cvs checkout</title>
+      <link>http://localhost:1313/notes/remote-cvs-checkout/</link>
+      <pubDate>Tue, 23 Oct 2007 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/remote-cvs-checkout/</guid>
+      <description>&lt;p&gt;&lt;code&gt;cvs -d :pserver:username@server:/usr/local/cvsroot checkout project&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>vim basic commands</title>
+      <link>http://localhost:1313/notes/vim-basic-commands/</link>
+      <pubDate>Tue, 23 Oct 2007 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/vim-basic-commands/</guid>
+      <description>&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;-------------------&#xA;Visual commands&#xA;------------------&#xA;&#xA;&amp;gt; - shift right&#xA;&amp;lt; - shift left&#xA;y - yank (copy) marked text&#xA;d - delete marked text&#xA;~ - switch case&#xA;&#xA;---------------------------&#xA;Working with multiple files&#xA;----------------------------&#xA;:e filename - Edit a file in a new buffer&#xA;:bnext (or :bn) - go to next buffer&#xA;:bprev (of :bp) - go to previous buffer&#xA;:bd - delete a buffer (close a file)&#xA;:sp filename - Open a file in a new buffer and split window&#xA;ctrl+ws - Split windows&#xA;ctrl+ww - switch between windows&#xA;ctrl+wq - Quit a window&#xA;ctrl+wv - Split windows vertically&#xA;:vsp filename - Splits the screen vertically and opens filename in the new area.&#xA;k - Moves to the split above the current split.&#xA;Up - Moves to the split above the current split.&#xA;j - Moves to the split below the current split.&#xA;Down - Moves to the split below the current split.&#xA;+   Increases the size of the current split by one line. (Try combining this with counts -- e.g. 5+ will make the split five lines bigger.)&#xA;- (Minus sign) Decreases the size of the current split by one line.&#xA;_   (Underscore) Maximize the current split (that is, make it take up as much room as possible.)&#xA;&#xA;&#xA;-------------------------------------------------------------------------------------&#xA;Full Command                Short form          Description&#xA;-------------------------------------------------------------------------------------&#xA;autoindent/noautoindent     ai/noai             {CR} returns to indent of previous line&#xA;autowrite/noautowrite       aw/noaw             See tags&#xA;errorbells/noerrorbells     eb/noeb             Silence error beep&#xA;flash/noflash               fl/nofl             Screen flashes upon error (for deaf people or when noerrorbells is set)&#xA;tabstop=8                   ts                  Tab key displays 8 spaces&#xA;ignorecase/noignorecase     ic/noic             Case sensitive searches&#xA;number/nonumber             nu/nonu             Display line numbers&#xA;showmatch/noshowmatch       no abbreviations    Cursor shows matching &amp;#34;)&amp;#34; and &amp;#34;}&amp;#34;&#xA;showmode/noshowmode         no abbreviations    Editor mode is displayed on bottom of screen&#xA;taglength                   tl  Default=0. Set significant characters&#xA;closepunct=&amp;#39;&amp;#34;.,;)]}         - % key shows matching symbol. Also see showmatch&#xA;linelimit=1048560           - Maximum file size to edit&#xA;wrapscan/nowrapscan         ws/nows             Breaks line if too long&#xA;wrapmargin=0/nowrapmargin   wm/nowm             Define right margin for line wrapping.&#xA;list/nolist                 - Display all Tabs/Ends of lines.&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    <item>
+      <title>vim code folding</title>
+      <link>http://localhost:1313/notes/vim-code-folding/</link>
+      <pubDate>Tue, 23 Oct 2007 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/vim-code-folding/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;set foldmethod=marker&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;At the beginning of a function fragment, you can type ‘zfap’ to create a fold; this should add some {{{ }}} tags around your code in the comment of choice for the language you’re coding in.&lt;/li&gt;&#xA;&lt;li&gt;You can type ‘zo’ to open a fold, or I can just hit the right arrow key on the folded code marker.&lt;/li&gt;&#xA;&lt;li&gt;You can type ‘zc’ to close a fold.&lt;/li&gt;&#xA;&lt;li&gt;You can type ‘zr’ to open all folds.&lt;/li&gt;&#xA;&lt;li&gt;You can type ‘zm’ to close all folds.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>wget entire website</title>
+      <link>http://localhost:1313/notes/wget-entire-website/</link>
+      <pubDate>Tue, 23 Oct 2007 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/wget-entire-website/</guid>
+      <description>&lt;p&gt;wget -m -k -K -E http://url/of/web/site&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Reset form by looping through elements</title>
+      <link>http://localhost:1313/notes/rest-form-by-looping-through-elements/</link>
+      <pubDate>Thu, 31 May 2007 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/rest-form-by-looping-through-elements/</guid>
+      <description>&lt;p&gt;Function to reset form values.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;function resetForm(theForm){&#xA;    for(i=0; i&amp;lt;theForm.elements.length; i++)&#xA;    {&#xA;        if(theForm.elements[i].type == &amp;#34;text&amp;#34;)&#xA;        {&#xA;            theForm.elements[i].value = &amp;#39;&amp;#39;;&#xA;        }&#xA;        else if(theForm.elements[i].type == &amp;#34;select-one&amp;#34;)&#xA;        {&#xA;            theForm.elements[i].selectedIndex = 0;&#xA;        }&#xA;    }&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;other possible form elements: textarea, checkbox&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

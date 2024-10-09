@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vim on Server Notes</title>
+    <link>http://localhost:1313/tags/vim/</link>
+    <description>Recent content in Vim on Server Notes</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 23 Oct 2007 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>vim code folding</title>
+      <link>http://localhost:1313/notes/vim-code-folding/</link>
+      <pubDate>Tue, 23 Oct 2007 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/vim-code-folding/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;set foldmethod=marker&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;At the beginning of a function fragment, you can type ‘zfap’ to create a fold; this should add some {{{ }}} tags around your code in the comment of choice for the language you’re coding in.&lt;/li&gt;&#xA;&lt;li&gt;You can type ‘zo’ to open a fold, or I can just hit the right arrow key on the folded code marker.&lt;/li&gt;&#xA;&lt;li&gt;You can type ‘zc’ to close a fold.&lt;/li&gt;&#xA;&lt;li&gt;You can type ‘zr’ to open all folds.&lt;/li&gt;&#xA;&lt;li&gt;You can type ‘zm’ to close all folds.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

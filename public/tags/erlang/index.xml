@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Erlang on Server Notes</title>
+    <link>http://localhost:1313/tags/erlang/</link>
+    <description>Recent content in Erlang on Server Notes</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 06 Nov 2011 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/erlang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>lion macports erlang compilation patch</title>
+      <link>http://localhost:1313/notes/lion-macports-erlang-compilation-patch/</link>
+      <pubDate>Sun, 06 Nov 2011 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/lion-macports-erlang-compilation-patch/</guid>
+      <description>&lt;p&gt;Add the following under &amp;ldquo;platform darwin 11&amp;rdquo; [sourcecode language=&amp;ldquo;cpp&amp;rdquo;] if {${configure.compiler} == &amp;ldquo;clang&amp;rdquo;} { configure.compiler llvm-gcc-4.2 } configure.cflags-delete &amp;ldquo;-std=c99&amp;rdquo; configure.cflags-delete -O2 configure.cxxflags-delete -O2 configure.cflags-append -O0 configure.cxxflags-append -O0 &amp;hellip;. [/sourcecode]&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

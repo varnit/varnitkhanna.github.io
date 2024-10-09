@@ -1,0 +1,85 @@
+baseURL = 'http://varnitkhanna.com/'
+languageCode = 'en-us'
+title = "Server Notes"
+theme = 'typo'
+
+[taxonomies]
+tag = 'tags'
+
+# Google analytics code
+# googleAnalytics = "G-xxxxxxxxx"
+
+[params]
+# Meta description
+description = "Varnit Khanna's Notes"
+
+# Appearance settings
+theme = 'dark'
+colorPalette = 'default'
+hideHeader = false
+
+# Intro on main page, content is markdown
+homeIntroTitle = ''
+homeIntroContent = """
+"""
+
+# Collection to display on home
+homeCollectionTitle = 'Notes'
+homeCollection = 'notes'
+
+# Lists parameters
+paginationSize = 100
+listSummaries = false
+listDateFormat = '2 Jan 2006'
+
+# Breadcrumbs
+breadcrumbs = false
+
+# Footer
+showFooter = false
+footerContent = ""
+
+# Social icons
+[[params.social]]
+name = "linkedin"
+url = "https://www.linkedin.com/in/varnitkhanna/"
+
+[[params.social]]
+name = "x"
+url = "https://x.com/varnit"
+
+[[params.social]]
+name = "github"
+url = "https://github.com/varnit"
+
+# Main menu pages
+[[params.menu]]
+name = "home"
+url = "/"
+
+[[params.menu]]
+name = "notes"
+url = "/notes"
+
+[[params.menu]]
+name = "tags"
+url = "/tags"
+
+#[[params.menu]]
+#name = "about"
+#url = "/about"
+
+# Syntax highligth on code blocks
+[markup]
+[markup.highlight]
+style = 'algol'
+
+# Giscus comments
+[params.giscus]
+enable = false
+repo = "user/repo"
+repoid = "repoId"
+category = "General"
+categoryid = "categoryId"
+mapping = "pathname"
+theme = "preferred_color_scheme"

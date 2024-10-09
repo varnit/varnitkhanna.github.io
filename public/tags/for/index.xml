@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>For on Server Notes</title>
+    <link>http://localhost:1313/tags/for/</link>
+    <description>Recent content in For on Server Notes</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 03 Mar 2008 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/for/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>bash for loop through numbers</title>
+      <link>http://localhost:1313/notes/bash-for-loop-through-numbers/</link>
+      <pubDate>Mon, 03 Mar 2008 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/bash-for-loop-through-numbers/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;code&gt;# for i in `seq 1 10`; do mysql -uusername -ppassword database_name -e &amp;quot;SELECT COUNT(*) FROM table$i&amp;quot;;done;&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+  </channel>
+</rss>
