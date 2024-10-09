@@ -5,6 +5,10 @@ categories:
   - "erlang"
 ---
 
-\[sourcecode language="bash"\] # OTP application: $ rebar create-app appid=app\_name
+```
+# OTP application:
+$ rebar create-app appid=app_name
 
-\# gen\_server: $ rebar create template=simplesrv srvid=server\_name \[/sourcecode\]
+# gen_server:
+$ rebar create template=simplesrv srvid=server_name
+```
