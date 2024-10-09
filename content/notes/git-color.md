@@ -1,8 +1,8 @@
 ---
 title: "git color"
 date: "2009-09-13"
-categories: 
+tags:
   - "git"
 ---
 
-\[sourcecode language="bash"\] git config --global color.ui true \[/sourcecode\]
+`git config --global color.ui true`
