@@ -1,6 +1,8 @@
 ---
 title: "erlang variable memory footprint"
 date: "2013-05-21"
+tags:
+  - "erlang"
 ---
 
-\[sourcecode language="bash"\] erts\_debug:flat\_size(Term) \[/sourcecode\]
+erts\_debug:flat\_size(Term).
