@@ -5,4 +5,8 @@ categories:
   - "git"
 ---
 
-> `$ git log path/to/file $ git checkout <branch to merge into> $ git cherry-pick -x <commit sha>`
+```
+$ git log path/to/file
+$ git checkout <branch to merge into>
+$ git cherry-pick -x <commit sha>
+```
