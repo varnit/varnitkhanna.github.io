@@ -44,9 +44,9 @@ footerContent = ""
 name = "linkedin"
 url = "https://www.linkedin.com/in/varnitkhanna/"
 
-[[params.social]]
-name = "x"
-url = "https://x.com/varnit"
+#[[params.social]]
+#name = "x"
+#url = "https://x.com/varnit"
 
 [[params.social]]
 name = "github"
