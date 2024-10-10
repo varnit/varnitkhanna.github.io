@@ -1,8 +1,20 @@
 ---
 title: "Mac keyboard shortcuts for accents"
 date: "2008-07-19"
-categories: 
+tags:
   - "mac"
 ---
 
-<table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td width="20%"><p align="center"><span lang="ES">á</span></p></td><td><p class="MsoNormal" align="center"><span lang="ES">Option + E ,&nbsp; A</span></p></td></tr><tr><td><p align="center"><span lang="ES">é</span></p></td><td><p align="center"><span lang="ES">&nbsp;Option + E ,&nbsp; E</span></p></td></tr><tr><td><p align="center"><span>í</span></p></td><td><p align="center"><span>&nbsp;Option + E ,&nbsp; I</span></p></td></tr><tr><td><p align="center"><span lang="ES">ó</span></p></td><td><p align="center"><span lang="ES">&nbsp;Option + E ,&nbsp; O</span></p></td></tr><tr><td><p align="center"><span lang="ES">ú</span></p></td><td><p align="center"><span lang="ES">&nbsp;Option + E ,&nbsp; U</span></p></td></tr><tr><td><p align="center"><span>É</span></p></td><td><p align="center"><span>&nbsp;Option + E ,&nbsp; Shift + E</span></p></td></tr><tr><td><p align="center"><span>ñ</span></p></td><td><p align="center"><span>&nbsp;Option + N ,&nbsp; N</span></p></td></tr><tr><td><p align="center"><span>Ñ</span></p></td><td><p align="center"><span>&nbsp;Option + N ,&nbsp; Shift + N</span></p></td></tr><tr><td><p align="center"><span>¿</span></p></td><td><p align="center"><span>&nbsp;Option + Shift&nbsp;<span class="GramE">+ ?</span></span></p></td></tr><tr><td><p align="center"><span>¡</span></p></td><td><p align="center"><span>&nbsp;Option + 1</span></p></td></tr><tr><td><p align="center"><span lang="ES">ü</span></p></td><td><p align="center"><span lang="ES">&nbsp;Option + U , U</span></p></td></tr></tbody></table>
+| Char | Keyboard Shortcut |
+|------|-------------------|
+|   á  | Option + E , A    |
+|   é  | Option + E , E    |
+|   í  | Option + E , I    |
+|   ó  | Option + E , O    |
+|   ú  | Option + E , U    |
+|   É  | Option + E , Shift + E |
+|   ñ  | Option + N ,N     |
+|   Ñ  | Option + N , Shift + N |
+|   ¿  | Option + Shift + ? |
+|   ¡  | Option + 1        |
+|   ü  | Option + U , U    |
