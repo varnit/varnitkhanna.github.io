@@ -3,4 +3,4 @@ run:
 build:
 	hugo
 push:
-	git subtree push --prefix dist origin gh-pages
+	git subtree push --prefix public origin gh-pages
