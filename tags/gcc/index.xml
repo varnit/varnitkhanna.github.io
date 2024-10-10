@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gcc on Server Notes</title>
+    <link>http://varnitkhanna.com/tags/gcc/</link>
+    <description>Recent content in Gcc on Server Notes</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 03 Apr 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://varnitkhanna.com/tags/gcc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hmac</title>
+      <link>http://varnitkhanna.com/notes/hmac/</link>
+      <pubDate>Thu, 03 Apr 2014 00:00:00 +0000</pubDate>
+      <guid>http://varnitkhanna.com/notes/hmac/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Perl&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#!/usr/bin/perl use strict;&#xA;use warnings;&#xA;use Digest::SHA qw(hmac_sha1_hex);&#xA;print hmac_sha1_hex(&amp;#34;my data&amp;#34;, &amp;#34;secret key&amp;#34;) . &amp;#34;\n&amp;#34;;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;C&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;&#xA;#include &amp;lt;stdlib.h&amp;gt;&#xA;#include &amp;lt;strings.h&amp;gt;&#xA;#include &amp;lt;openssl/hmac.h&amp;gt;&#xA;&#xA;int main() {&#xA;  char* key = &amp;#34;secret key&amp;#34;;&#xA;  char* data = &amp;#34;my data&amp;#34;;&#xA;  char tmp[3];&#xA;  unsigned int result_len, i;&#xA;  unsigned char* result = malloc(sizeof(unsigned char) * result_len);&#xA;  HMAC_CTX ctx;&#xA;  HMAC_CTX_init(&amp;amp;ctx);&#xA;  HMAC_Init_ex(&amp;amp;ctx, (unsigned char*) key, strlen(key), EVP_sha1(), NULL);&#xA;  HMAC_Update(&amp;amp;ctx, (unsigned char*) data, strlen(data));&#xA;  HMAC_Final(&amp;amp;ctx, result, &amp;amp;result_len);&#xA;  HMAC_CTX_cleanup(&amp;amp;ctx);&#xA;  char* output = malloc(sizeof(char) * result_len);&#xA;&#xA;  for (i = 0; i != result_len; i++) {&#xA;    //printf(&amp;#34;Got %02X at byte %d\n&amp;#34;, result[i], i);&#xA;    sprintf(tmp, &amp;#34;%02x&amp;#34;, result[i]); strcat(output, tmp);&#xA;  }&#xA;  printf(&amp;#34;output : %s\n&amp;#34;, output);&#xA;  printf(&amp;#34;expected: %s\n&amp;#34;, &amp;#34;97a62219092f3ddab3707cc9e85e63e926f45c87&amp;#34;);&#xA;  return 0;&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Sample Run&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>gcc gdb</title>
+      <link>http://varnitkhanna.com/notes/gcc-gdb/</link>
+      <pubDate>Thu, 09 Aug 2012 00:00:00 +0000</pubDate>
+      <guid>http://varnitkhanna.com/notes/gcc-gdb/</guid>
+      <description>&lt;p&gt;&lt;code&gt;gcc -ggdb -std=c99 -Wall -Werror&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

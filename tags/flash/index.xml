@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flash on Server Notes</title>
+    <link>http://varnitkhanna.com/tags/flash/</link>
+    <description>Recent content in Flash on Server Notes</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 09 Nov 2007 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://varnitkhanna.com/tags/flash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Transparent Flash movie</title>
+      <link>http://varnitkhanna.com/notes/transparent-flash-movie/</link>
+      <pubDate>Fri, 09 Nov 2007 00:00:00 +0000</pubDate>
+      <guid>http://varnitkhanna.com/notes/transparent-flash-movie/</guid>
+      <description>&lt;p&gt;&lt;code&gt;&amp;lt;embed src=&amp;quot;&amp;quot; wmode=&amp;quot;transparent&amp;quot;&amp;gt;&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

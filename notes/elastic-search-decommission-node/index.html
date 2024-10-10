@@ -2,17 +2,17 @@
 <html lang="en-us"
   dir="ltr">
 
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 
 
 
-<link rel="icon" type="image/ico" href="http://localhost:1313//favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313//favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313//favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="http://localhost:1313//android-chrome-192x192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313//apple-touch-icon.png">
+<link rel="icon" type="image/ico" href="http://varnitkhanna.com//favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://varnitkhanna.com//favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://varnitkhanna.com//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="http://varnitkhanna.com//android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="http://varnitkhanna.com//apple-touch-icon.png">
 
 <meta name="description" content=""/>
 
@@ -22,7 +22,7 @@
     
 </title>
 
-<link rel="canonical" href="http://localhost:1313/notes/elastic-search-decommission-node/"/>
+<link rel="canonical" href="http://varnitkhanna.com/notes/elastic-search-decommission-node/"/>
 
 
 
@@ -36,6 +36,10 @@
 
 
 <link rel="stylesheet" href="/assets/combined.min.a6824bbee0d90d5af09fed9b70395ce7076b615e315037455d903314e96ef91b.css" media="all">
+
+
+
+
 
 
 
@@ -137,7 +141,10 @@
   
 
   <div class="single-content">
-    <p>Remove node: [sourcecode language=&ldquo;bash&rdquo;] curl -v -XPUT localhost:9200/_cluster/settings -d &lsquo;{&ldquo;transient&rdquo; :{&ldquo;cluster.routing.allocation.exclude._ip&rdquo; : &ldquo;xxx.xxx.xxx.xxx&rdquo;}}&rsquo; [/sourcecode] Add node back after maintenance: [sourcecode language=&ldquo;bash&rdquo;] curl -v -XPUT localhost:9200/_cluster/settings -d &lsquo;{&ldquo;transient&rdquo; :{&ldquo;cluster.routing.allocation.exclude._ip&rdquo; : &ldquo;&rdquo;}}&rsquo; [/sourcecode]</p>
+    <p><strong>Remove node:</strong><br>
+<code>curl -v -XPUT localhost:9200/_cluster/settings -d '{&quot;transient&quot; :{&quot;cluster.routing.allocation.exclude._ip&quot; : &quot;xxx.xxx.xxx.xxx&quot;}}'</code></p>
+<p><strong>Add node back after maintenance:</strong><br>
+<code>curl -v -XPUT localhost:9200/_cluster/settings -d '{&quot;transient&quot; :{&quot;cluster.routing.allocation.exclude._ip&quot; : &quot;&quot;}}'</code></p>
 
     
   </div>
@@ -172,7 +179,7 @@
             
             <div class="single-pagination-container-next">
                 <div class="single-pagination-text">
-                    <a href="/notes/fe-dev-setup/">
+                    <a href="/notes/npm-dev-setup/">
                         npm dev setup
                     </a>
                 </div>

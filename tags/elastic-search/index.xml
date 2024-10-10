@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Elastic-Search on Server Notes</title>
+    <link>http://varnitkhanna.com/tags/elastic-search/</link>
+    <description>Recent content in Elastic-Search on Server Notes</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 30 Sep 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://varnitkhanna.com/tags/elastic-search/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>elastic search decommission node</title>
+      <link>http://varnitkhanna.com/notes/elastic-search-decommission-node/</link>
+      <pubDate>Tue, 30 Sep 2014 00:00:00 +0000</pubDate>
+      <guid>http://varnitkhanna.com/notes/elastic-search-decommission-node/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Remove node:&lt;/strong&gt;&lt;br&gt;&#xA;&lt;code&gt;curl -v -XPUT localhost:9200/_cluster/settings -d &#39;{&amp;quot;transient&amp;quot; :{&amp;quot;cluster.routing.allocation.exclude._ip&amp;quot; : &amp;quot;xxx.xxx.xxx.xxx&amp;quot;}}&#39;&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Add node back after maintenance:&lt;/strong&gt;&lt;br&gt;&#xA;&lt;code&gt;curl -v -XPUT localhost:9200/_cluster/settings -d &#39;{&amp;quot;transient&amp;quot; :{&amp;quot;cluster.routing.allocation.exclude._ip&amp;quot; : &amp;quot;&amp;quot;}}&#39;&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>elasticsearch test analyzer</title>
+      <link>http://varnitkhanna.com/notes/elasticsearch-test-analyzer/</link>
+      <pubDate>Fri, 16 May 2014 00:00:00 +0000</pubDate>
+      <guid>http://varnitkhanna.com/notes/elasticsearch-test-analyzer/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Easy way to test a new analyzer via curl:&lt;/strong&gt;&lt;br&gt;&#xA;&lt;code&gt;curl &#39;localhost:9200/_analyze?text=the+quick+brown+fox+jumps+over+the+lazy+dog&amp;amp;pretty&amp;amp;analyzer=snowball&#39;&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ES optimize index</title>
+      <link>http://varnitkhanna.com/notes/es-optimize-index/</link>
+      <pubDate>Thu, 19 Sep 2013 00:00:00 +0000</pubDate>
+      <guid>http://varnitkhanna.com/notes/es-optimize-index/</guid>
+      <description>&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# Force ES to free up disk space for deleted docs&#xA;$ curl -XPOST &amp;#39;http://localhost:9200/_optimize?only_expunge_deletes=true&amp;#39;&#xA;&#xA;# optimize index into single segment&#xA;$ curl -XPOST &amp;#39;http://localhost:9200/_optimize?max_num_segments=1&amp;#39;&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+  </channel>
+</rss>

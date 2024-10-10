@@ -2,17 +2,17 @@
 <html lang="en-us"
   dir="ltr">
 
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 
 
 
-<link rel="icon" type="image/ico" href="http://localhost:1313//favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313//favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313//favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="http://localhost:1313//android-chrome-192x192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313//apple-touch-icon.png">
+<link rel="icon" type="image/ico" href="http://varnitkhanna.com//favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://varnitkhanna.com//favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://varnitkhanna.com//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="http://varnitkhanna.com//android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="http://varnitkhanna.com//apple-touch-icon.png">
 
 <meta name="description" content=""/>
 
@@ -22,7 +22,7 @@
     
 </title>
 
-<link rel="canonical" href="http://localhost:1313/notes/git-pretty-log/"/>
+<link rel="canonical" href="http://varnitkhanna.com/notes/git-pretty-log/"/>
 
 
 
@@ -36,6 +36,10 @@
 
 
 <link rel="stylesheet" href="/assets/combined.min.a6824bbee0d90d5af09fed9b70395ce7076b615e315037455d903314e96ef91b.css" media="all">
+
+
+
+
 
 
 
@@ -137,8 +141,9 @@
   
 
   <div class="single-content">
-    <p>[sourcecode language=&ldquo;bash&rdquo;] git config &ndash;global alias.lol &ldquo;log &ndash;pretty=oneline &ndash;abbrev-commit &ndash;graph &ndash;decorate&rdquo; [/sourcecode] or [sourcecode language=&ldquo;bash&rdquo;] git config &ndash;global alias.lg &ldquo;log &ndash;graph &ndash;pretty=format:&rsquo;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset&rsquo; &ndash;abbrev-commit &ndash;date=relative&rdquo; [/sourcecode]</p>
-
+    <pre tabindex="0"><code>$ git config --global alias.lol &#34;log --pretty=oneline --abbrev-commit --graph --decorate&#34;
+$ git config --global alias.lg &#34;log --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset&#39; --abbrev-commit --date=relative&#34;
+</code></pre>
     
   </div>
 

@@ -2,17 +2,17 @@
 <html lang="en-us"
   dir="ltr">
 
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 
 
 
-<link rel="icon" type="image/ico" href="http://localhost:1313//favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313//favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313//favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="http://localhost:1313//android-chrome-192x192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313//apple-touch-icon.png">
+<link rel="icon" type="image/ico" href="http://varnitkhanna.com//favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://varnitkhanna.com//favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://varnitkhanna.com//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="http://varnitkhanna.com//android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="http://varnitkhanna.com//apple-touch-icon.png">
 
 <meta name="description" content=""/>
 
@@ -22,7 +22,7 @@
     
 </title>
 
-<link rel="canonical" href="http://localhost:1313/notes/kubernetes-on-aws/"/>
+<link rel="canonical" href="http://varnitkhanna.com/notes/kubernetes-on-aws/"/>
 
 
 
@@ -36,6 +36,10 @@
 
 
 <link rel="stylesheet" href="/assets/combined.min.a6824bbee0d90d5af09fed9b70395ce7076b615e315037455d903314e96ef91b.css" media="all">
+
+
+
+
 
 
 
@@ -138,32 +142,22 @@
 
   <div class="single-content">
     <p>Note this only works for k8s 1.5</p>
-<ol>
-<li>
-<p><strong>Launch AWS post instance cluster</strong> <code># make sure awscli is already setup export AWS_S3_REGION=us-east-1 export KUBERNETES_PROVIDER=aws export KUBE_AWS_INSTANCE_PREFIX=dev export KUBE_AWS_ZONE=us-east-1a export MASTER_SIZE=m3.large export NODE_SIZE=r3.2xlarge export NUM_NODES=1 export NODE_SPOT_PRICE=1.33  /path/to/kubernetes/cluster/kube-up.sh</code></p>
-</li>
-<li>
-<p><strong>Cluster info</strong> <code>kubectl cluster-info</code></p>
-</li>
-<li>
-<p><strong>Get nodes</strong> <code>kubctl get nodes</code></p>
-</li>
-<li>
-<p><strong>Create pod</strong> <code>kubectl create -f component/service.yaml</code></p>
-</li>
-<li>
-<p><strong>Delete pod</strong> <code>kubectl delete -f component/service.yaml</code></p>
-</li>
-<li>
-<p><strong>Shell into container</strong> <code>kubectl exec -it container-name bash</code></p>
-</li>
-<li>
-<p><strong>Cluster settings</strong> <code>kubectl config set-credentials admin/dev --username=admin --password=******** kubectl config set-cluster dev --insecure-skip-tls-verify=true --server=https://xx.xx.xx.xx kubectl config set-context dev/admin --user=admin/uat1 --namespace=default --cluster=dev kubectl config use-context dev/admin</code></p>
-</li>
-<li>
-<p><strong>Delete cluster</strong> <code>/path/to/kubernetes/cluster/kube-down.sh</code></p>
-</li>
-</ol>
+<p><strong>Launch AWS spot instance cluster:</strong> (make sure awscli is already setup)<br>
+<code>export AWS_S3_REGION=us-east-1 export KUBERNETES_PROVIDER=aws export KUBE_AWS_INSTANCE_PREFIX=dev export KUBE_AWS_ZONE=us-east-1a export MASTER_SIZE=m3.large export NODE_SIZE=r3.2xlarge export NUM_NODES=1 export NODE_SPOT_PRICE=1.33  /path/to/kubernetes/cluster/kube-up.sh</code></p>
+<p><strong>Cluster info:</strong><br>
+<code>kubectl cluster-info</code></p>
+<p><strong>Get nodes:</strong><br>
+<code>kubctl get nodes</code></p>
+<p><strong>Create pod:</strong><br>
+<code>kubectl create -f component/service.yaml</code></p>
+<p><strong>Delete pod:</strong><br>
+<code>kubectl delete -f component/service.yaml</code></p>
+<p><strong>Shell into container:</strong><br>
+<code>kubectl exec -it container-name bash</code></p>
+<p><strong>Cluster settings:</strong><br>
+<code>kubectl config set-credentials admin/dev --username=admin --password=******** kubectl config set-cluster dev --insecure-skip-tls-verify=true --server=https://xx.xx.xx.xx kubectl config set-context dev/admin --user=admin/uat1 --namespace=default --cluster=dev kubectl config use-context dev/admin</code></p>
+<p><strong>Delete cluster:</strong><br>
+<code>/path/to/kubernetes/cluster/kube-down.sh</code></p>
 
     
   </div>
@@ -186,7 +180,7 @@
             <div class="single-pagination-container-prev">
                 <div class="single-pagination-text">←</div>
                 <div class="single-pagination-text">
-                    <a href="/notes/fe-dev-setup/">
+                    <a href="/notes/npm-dev-setup/">
                         npm dev setup
                     </a>
                 </div>
