@@ -2,17 +2,17 @@
 <html lang="en-us"
   dir="ltr">
 
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 
 
 
-<link rel="icon" type="image/ico" href="http://localhost:1313//favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313//favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313//favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="http://localhost:1313//android-chrome-192x192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313//apple-touch-icon.png">
+<link rel="icon" type="image/ico" href="http://varnitkhanna.com//favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://varnitkhanna.com//favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://varnitkhanna.com//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="http://varnitkhanna.com//android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="http://varnitkhanna.com//apple-touch-icon.png">
 
 <meta name="description" content=""/>
 
@@ -22,7 +22,7 @@
     
 </title>
 
-<link rel="canonical" href="http://localhost:1313/notes/hmac/"/>
+<link rel="canonical" href="http://varnitkhanna.com/notes/hmac/"/>
 
 
 
@@ -36,6 +36,10 @@
 
 
 <link rel="stylesheet" href="/assets/combined.min.a6824bbee0d90d5af09fed9b70395ce7076b615e315037455d903314e96ef91b.css" media="all">
+
+
+
+
 
 
 
@@ -137,10 +141,44 @@
   
 
   <div class="single-content">
-    <p>[sourcecode language=&ldquo;perl&rdquo;] #!/usr/bin/perl use strict; use warnings; use Digest::SHA qw(hmac_sha1_hex); print hmac_sha1_hex(&ldquo;my data&rdquo;, &ldquo;secret key&rdquo;) . &ldquo;\n&rdquo;; [/sourcecode]</p>
-<p>[sourcecode language=&ldquo;c&rdquo;] #include &lt;stdio.h&gt; #include &lt;stdlib.h&gt; #include &lt;strings.h&gt; #include &lt;openssl/hmac.h&gt; int main() { char* key = &ldquo;secret key&rdquo;; char* data = &ldquo;my data&rdquo;; char tmp[3]; unsigned int result_len, i; unsigned char* result = malloc(sizeof(unsigned char) * result_len); HMAC_CTX ctx; HMAC_CTX_init(&amp;ctx); HMAC_Init_ex(&amp;ctx, (unsigned char*) key, strlen(key), EVP_sha1(), NULL); HMAC_Update(&amp;ctx, (unsigned char*) data, strlen(data)); HMAC_Final(&amp;ctx, result, &amp;result_len); HMAC_CTX_cleanup(&amp;ctx); char* output = malloc(sizeof(char) * result_len); for (i = 0; i != result_len; i++) { //printf(&ldquo;Got %02X at byte %d\n&rdquo;, result[i], i); sprintf(tmp, &ldquo;%02x&rdquo;, result[i]); strcat(output, tmp); } printf(&ldquo;output : %s\n&rdquo;, output); printf(&ldquo;expected: %s\n&rdquo;, &ldquo;97a62219092f3ddab3707cc9e85e63e926f45c87&rdquo;); return 0; } [/sourcecode]</p>
-<p>[sourcecode language=&ldquo;bash&rdquo;] $ perl hmac.pl 97a62219092f3ddab3707cc9e85e63e926f45c87 $ gcc -Wall -lcrypto hmac.c -o hmac &amp;&amp; ./hmac output : 97a62219092f3ddab3707cc9e85e63e926f45c87 expected: 97a62219092f3ddab3707cc9e85e63e926f45c87 [/sourcecode]</p>
+    <p><strong>Perl</strong></p>
+<pre tabindex="0"><code>#!/usr/bin/perl use strict;
+use warnings;
+use Digest::SHA qw(hmac_sha1_hex);
+print hmac_sha1_hex(&#34;my data&#34;, &#34;secret key&#34;) . &#34;\n&#34;;
+</code></pre><p><strong>C</strong></p>
+<pre tabindex="0"><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;strings.h&gt;
+#include &lt;openssl/hmac.h&gt;
 
+int main() {
+  char* key = &#34;secret key&#34;;
+  char* data = &#34;my data&#34;;
+  char tmp[3];
+  unsigned int result_len, i;
+  unsigned char* result = malloc(sizeof(unsigned char) * result_len);
+  HMAC_CTX ctx;
+  HMAC_CTX_init(&amp;ctx);
+  HMAC_Init_ex(&amp;ctx, (unsigned char*) key, strlen(key), EVP_sha1(), NULL);
+  HMAC_Update(&amp;ctx, (unsigned char*) data, strlen(data));
+  HMAC_Final(&amp;ctx, result, &amp;result_len);
+  HMAC_CTX_cleanup(&amp;ctx);
+  char* output = malloc(sizeof(char) * result_len);
+
+  for (i = 0; i != result_len; i++) {
+    //printf(&#34;Got %02X at byte %d\n&#34;, result[i], i);
+    sprintf(tmp, &#34;%02x&#34;, result[i]); strcat(output, tmp);
+  }
+  printf(&#34;output : %s\n&#34;, output);
+  printf(&#34;expected: %s\n&#34;, &#34;97a62219092f3ddab3707cc9e85e63e926f45c87&#34;);
+  return 0;
+}
+</code></pre><p><strong>Sample Run</strong></p>
+<pre tabindex="0"><code>$ perl hmac.pl 97a62219092f3ddab3707cc9e85e63e926f45c87
+$ gcc -Wall -lcrypto hmac.c -o hmac &amp;&amp; ./hmac
+output : 97a62219092f3ddab3707cc9e85e63e926f45c87 expected: 97a62219092f3ddab3707cc9e85e63e926f45c87
+</code></pre>
     
   </div>
 

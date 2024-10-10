@@ -2,18 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mac on Server Notes</title>
-    <link>http://localhost:1313/tags/mac/</link>
+    <link>http://varnitkhanna.com/tags/mac/</link>
     <description>Recent content in Mac on Server Notes</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 01 Nov 2008 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://varnitkhanna.com/tags/mac/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Concatenate nsstring</title>
-      <link>http://localhost:1313/notes/concatenate-nsstring/</link>
+      <link>http://varnitkhanna.com/notes/concatenate-nsstring/</link>
       <pubDate>Sat, 01 Nov 2008 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/notes/concatenate-nsstring/</guid>
+      <guid>http://varnitkhanna.com/notes/concatenate-nsstring/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;code&gt;**NSString** *path = @&amp;quot;~&amp;quot;; **NSString** *absolutePath = [path **stringByExpandingTildeInPath**];  **NSLog**( [@&amp;quot;My folder is at&#39;&amp;quot; **stringByAppendingString**:absolutePath]); // or just use this **NSLog**( @&amp;quot;My folder is at&#39;%@&#39;&amp;quot;, absolutePath);&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Also note that NSString cannot be modified once you have initialized it. Use NSMutableString if you need modify a string.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;code&gt;**NSMutableString** *logString = [[**NSMutableString** alloc] **initWithString**: @&amp;quot;Process Name: &#39;&amp;quot;]; [logString **appendString**: [[**NSProcessInfo** processInfo] **processName**]]; [logString **appendString**: @&amp;quot;&#39; Process ID: &#39;&amp;quot;]; [logString **appendFormat**: @&amp;quot;%d&amp;quot;, [[**NSProcessInfo** processInfo] processIdentifier]]; //cast int into string [logString **appendString**: @&amp;quot;&#39;&amp;quot;];&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mac keyboard shortcuts for accents</title>
+      <link>http://varnitkhanna.com/notes/mac-keyboard-shortcuts-for-accents/</link>
+      <pubDate>Sat, 19 Jul 2008 00:00:00 +0000</pubDate>
+      <guid>http://varnitkhanna.com/notes/mac-keyboard-shortcuts-for-accents/</guid>
+      <description>&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th style=&#34;text-align: left&#34;&gt;Char&lt;/th&gt;&#xA;          &lt;th style=&#34;text-align: left&#34;&gt;Keyboard Shortcut&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;á&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;Option + E , A&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;é&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;Option + E , E&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;í&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;Option + E , I&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;ó&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;Option + E , O&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;ú&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;Option + E , U&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;É&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;Option + E , Shift + E&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;ñ&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;Option + N ,N&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;Ñ&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;Option + N , Shift + N&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;¿&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;Option + Shift + ?&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;¡&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;Option + 1&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;ü&lt;/td&gt;&#xA;          &lt;td style=&#34;text-align: left&#34;&gt;Option + U , U&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;</description>
     </item>
   </channel>
 </rss>

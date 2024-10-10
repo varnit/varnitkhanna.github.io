@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Regex on Server Notes</title>
-    <link>http://localhost:1313/tags/regex/</link>
+    <link>http://varnitkhanna.com/tags/regex/</link>
     <description>Recent content in Regex on Server Notes</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 29 May 2010 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/regex/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://varnitkhanna.com/tags/regex/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>email address validation regular expression</title>
-      <link>http://localhost:1313/notes/email-address-validation-regular-expression/</link>
+      <link>http://varnitkhanna.com/notes/email-address-validation-regular-expression/</link>
       <pubDate>Sat, 29 May 2010 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/notes/email-address-validation-regular-expression/</guid>
+      <guid>http://varnitkhanna.com/notes/email-address-validation-regular-expression/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;code&gt;/^([\w\!\#$\%\&amp;amp;\&#39;\*\+\-\/\=\?\^\`{\|\}\~]+\.)*[\w\!\#$\%\&amp;amp;\&#39;\*\+\-\/\=\?\^\`{\|\}\~]+@((((([a-z0-9]{1}[a-z0-9\-]{0,62}[a-z0-9]{1})|[a-z])\.)+[a-z]{2,6})|(\d{1,3}\.){3}\d{1,3}(\:\d{1,5})?)$/i&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
     </item>
   </channel>
