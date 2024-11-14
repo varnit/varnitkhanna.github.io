@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Webmachine on Server Notes</title>
-    <link>http://varnitkhanna.com/tags/webmachine/</link>
+    <link>http://localhost:1313/tags/webmachine/</link>
     <description>Recent content in Webmachine on Server Notes</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 01 May 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://varnitkhanna.com/tags/webmachine/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/webmachine/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>trace webmachine resource</title>
-      <link>http://varnitkhanna.com/notes/trace-webmachine-resource/</link>
+      <link>http://localhost:1313/notes/trace-webmachine-resource/</link>
       <pubDate>Thu, 01 May 2014 00:00:00 +0000</pubDate>
-      <guid>http://varnitkhanna.com/notes/trace-webmachine-resource/</guid>
+      <guid>http://localhost:1313/notes/trace-webmachine-resource/</guid>
       <description>&lt;p&gt;1&amp;gt; dbg:tracer().&lt;/p&gt;&#xA;&lt;p&gt;2&amp;gt; dbg:p(all,[c]).&lt;/p&gt;&#xA;&lt;p&gt;3&amp;gt; dbg:tp({my_resource, &amp;lsquo;_&amp;rsquo;, &amp;lsquo;_&amp;rsquo;}, []).&lt;/p&gt;</description>
     </item>
   </channel>
