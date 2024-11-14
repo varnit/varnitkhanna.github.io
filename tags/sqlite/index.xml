@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sqlite on Server Notes</title>
-    <link>http://varnitkhanna.com/tags/sqlite/</link>
+    <link>http://localhost:1313/tags/sqlite/</link>
     <description>Recent content in Sqlite on Server Notes</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 03 Apr 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://varnitkhanna.com/tags/sqlite/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/sqlite/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>sqlite index</title>
-      <link>http://varnitkhanna.com/notes/sqlite-index/</link>
+      <link>http://localhost:1313/notes/sqlite-index/</link>
       <pubDate>Thu, 03 Apr 2014 00:00:00 +0000</pubDate>
-      <guid>http://varnitkhanna.com/notes/sqlite-index/</guid>
+      <guid>http://localhost:1313/notes/sqlite-index/</guid>
       <description>&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sqlite&amp;gt; CREATE TABLE dogs (dog_id INTEGER PRIMARY KEY AUTOINCREMENT, dog_name VARCHAR(100), state CHAR(2));&#xA;sqlite&amp;gt; CREATE INDEX dog on dogs(state);&#xA;sqlite&amp;gt; .indices dogs dog&#xA;sqlite&amp;gt; EXPLAIN QUERY PLAN SELECT dog_name FROM dogs WHERE state=&amp;#39;FL&amp;#39;;&#xA;0|0|TABLE leagues WITH INDEX league&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     <item>
       <title>sqlite query index</title>
-      <link>http://varnitkhanna.com/notes/sqlite-query-index/</link>
+      <link>http://localhost:1313/notes/sqlite-query-index/</link>
       <pubDate>Sat, 29 Aug 2009 00:00:00 +0000</pubDate>
-      <guid>http://varnitkhanna.com/notes/sqlite-query-index/</guid>
+      <guid>http://localhost:1313/notes/sqlite-query-index/</guid>
       <description>&lt;p&gt;Here is a basic intro to sqlite indexes.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;sqlite&amp;gt; CREATE TABLE dogs (dog_id INTEGER PRIMARY KEY AUTOINCREMENT, dog_name VARCHAR(100), state CHAR(2));&lt;/p&gt;&#xA;&lt;p&gt;sqlite&amp;gt; CREATE INDEX dog on dogs(state);&lt;/p&gt;&#xA;&lt;p&gt;sqlite&amp;gt; .indices dogs dog&lt;/p&gt;&#xA;&lt;p&gt;sqlite&amp;gt; EXPLAIN QUERY PLAN SELECT dog_name FROM dogs WHERE state=&amp;lsquo;FL&amp;rsquo;; 0|0|TABLE leagues WITH INDEX league&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
     </item>
   </channel>

@@ -18,11 +18,11 @@
 
 <title>
     
-    npm dev setup | Server Notes
+    Open Webui with Local vllm Model | Server Notes
     
 </title>
 
-<link rel="canonical" href="http://localhost:1313/notes/npm-dev-setup/"/>
+<link rel="canonical" href="http://localhost:1313/notes/open-webui-local-vllm-model/"/>
 
 
 
@@ -111,7 +111,7 @@
 
     
 
-    <h1 class="single-title">npm dev setup</h1>
+    <h1 class="single-title">Open Webui with Local vllm Model</h1>
     
 
     
@@ -120,7 +120,7 @@
       
       
       
-      <time datetime="2016-02-02T00:00:00&#43;00:00">February 2, 2016</time>
+      <time datetime="2024-11-14T02:09:04&#43;00:00">November 14, 2024</time>
       
 
       
@@ -137,24 +137,23 @@
   
 
   <div class="single-content">
-    <pre tabindex="0"><code># create package.json
-$ npm init
-
-# install specific version of npm package
-$ npm install --save react@0.14.7
-
-# browserify
-$ npm install -g browserify
-
-# Babel + browserify
-$ npm install --save-dev babelify
-
-# build
-$ npm run build
-
-# sass
-$ npm install --save-dev node-sass
+    <p>Run the following commands to start a local instance of vllm with <strong>Qwen/Qwen2.5-Coder-7B-Instruct</strong></p>
+<pre><code>docker run --runtime nvidia --gpus '&quot;device=0&quot;' \
+  -v ~/.cache/huggingface:/root/.cache/huggingface \
+  --env &quot;HUGGING_FACE_HUB_TOKEN=&lt;your_token&gt;&quot; \
+  --env &quot;CUDA_LAUNCH_BLOCKING=1&quot; \
+  -p 8000:8000 \
+  --ipc=host \
+  vllm/vllm-openai:latest --model Qwen/Qwen2.5-Coder-7B-Instruct --tensor-parallel-size 1 --gpu-memory-utilization 0.9
 </code></pre>
+<p>Assuming you have a NVIDIA GPU, the above command starts a docker container with vllm and downloads and run Qwen2.5-Coder-7B-Instruct on port 8000 and uses about 90% of the GPU memory.</p>
+<p>Now, run Open WebUI in a docker container calling the above vllm instance</p>
+<pre><code>docker run -d -p 3000:8080 -e OPENAI_API_BASE_URL=http://192.168.86.144:8000/v1 \
+  -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+</code></pre>
+<p>This will launch a docker container running on port 3000 and call the local instance of vllm running on port 8001. Also, a new volume will be created or uses an existing one.</p>
+<p>You should be able to access webui on <a href="http://localhost:3000/">http://localhost:3000</a></p>
+
     
   </div>
 
@@ -176,8 +175,8 @@ $ npm install --save-dev node-sass
             <div class="single-pagination-container-prev">
                 <div class="single-pagination-text">←</div>
                 <div class="single-pagination-text">
-                    <a href="/notes/elastic-search-decommission-node/">
-                        elastic search decommission node
+                    <a href="/notes/kubernetes-on-aws/">
+                        Kubernetes on AWS
                     </a>
                 </div>
             </div>
@@ -185,15 +184,6 @@ $ npm install --save-dev node-sass
         </div>
 
         <div class="single-pagination-next">
-            
-            <div class="single-pagination-container-next">
-                <div class="single-pagination-text">
-                    <a href="/notes/kubernetes-on-aws/">
-                        Kubernetes on AWS
-                    </a>
-                </div>
-                <div class="single-pagination-text">→</div>
-            </div>
             
         </div>
 

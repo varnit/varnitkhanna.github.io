@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Emerge on Server Notes</title>
-    <link>http://varnitkhanna.com/tags/emerge/</link>
+    <link>http://localhost:1313/tags/emerge/</link>
     <description>Recent content in Emerge on Server Notes</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 16 Aug 2008 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://varnitkhanna.com/tags/emerge/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/emerge/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>gentoo list installed packages</title>
-      <link>http://varnitkhanna.com/notes/gentoo-list-installed-packages/</link>
+      <link>http://localhost:1313/notes/gentoo-list-installed-packages/</link>
       <pubDate>Sat, 16 Aug 2008 00:00:00 +0000</pubDate>
-      <guid>http://varnitkhanna.com/notes/gentoo-list-installed-packages/</guid>
+      <guid>http://localhost:1313/notes/gentoo-list-installed-packages/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;equery list&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;emerge app-portage/gentoolkit if you already haven&amp;rsquo;t.&lt;/p&gt;</description>
     </item>
   </channel>

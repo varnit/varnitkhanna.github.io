@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on Server Notes</title>
-    <link>http://varnitkhanna.com/tags/linux/</link>
+    <link>http://localhost:1313/tags/linux/</link>
     <description>Recent content in Linux on Server Notes</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 30 Jul 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://varnitkhanna.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>fast linux delete for large directories</title>
-      <link>http://varnitkhanna.com/notes/fast-linux-delete-for-large-directories/</link>
+      <link>http://localhost:1313/notes/fast-linux-delete-for-large-directories/</link>
       <pubDate>Wed, 30 Jul 2014 00:00:00 +0000</pubDate>
-      <guid>http://varnitkhanna.com/notes/fast-linux-delete-for-large-directories/</guid>
+      <guid>http://localhost:1313/notes/fast-linux-delete-for-large-directories/</guid>
       <description>&lt;p&gt;Found this to be faster than &lt;code&gt;rm -rf&lt;/code&gt; on very large directories&lt;br&gt;&#xA;&lt;code&gt;$ mkdir blank&lt;/code&gt;&lt;br&gt;&#xA;&lt;code&gt;$ rsync -a --delete blank/ dir-to-delete/&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>gcc gdb</title>
-      <link>http://varnitkhanna.com/notes/gcc-gdb/</link>
+      <link>http://localhost:1313/notes/gcc-gdb/</link>
       <pubDate>Thu, 09 Aug 2012 00:00:00 +0000</pubDate>
-      <guid>http://varnitkhanna.com/notes/gcc-gdb/</guid>
+      <guid>http://localhost:1313/notes/gcc-gdb/</guid>
       <description>&lt;p&gt;&lt;code&gt;gcc -ggdb -std=c99 -Wall -Werror&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>hadoop lzo stdin stdout decompression</title>
-      <link>http://varnitkhanna.com/notes/hadoop-lzo-stdin-stdout-decompression/</link>
+      <link>http://localhost:1313/notes/hadoop-lzo-stdin-stdout-decompression/</link>
       <pubDate>Thu, 26 Jan 2012 00:00:00 +0000</pubDate>
-      <guid>http://varnitkhanna.com/notes/hadoop-lzo-stdin-stdout-decompression/</guid>
+      <guid>http://localhost:1313/notes/hadoop-lzo-stdin-stdout-decompression/</guid>
       <description>&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ hadoop fs -cat test/part-00000.lzo | lzop -df&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     <item>
       <title>grep wildcard</title>
-      <link>http://varnitkhanna.com/notes/grep-wildcard/</link>
+      <link>http://localhost:1313/notes/grep-wildcard/</link>
       <pubDate>Thu, 13 Dec 2007 00:00:00 +0000</pubDate>
-      <guid>http://varnitkhanna.com/notes/grep-wildcard/</guid>
+      <guid>http://localhost:1313/notes/grep-wildcard/</guid>
       <description>&lt;p&gt;Searches for a line with class*module* &lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;grep -Rni &amp;lsquo;class.*module.*&amp;rsquo; *&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
     </item>
     <item>
       <title>rsync over ssh</title>
-      <link>http://varnitkhanna.com/notes/rsync-over-ssh/</link>
+      <link>http://localhost:1313/notes/rsync-over-ssh/</link>
       <pubDate>Thu, 13 Dec 2007 00:00:00 +0000</pubDate>
-      <guid>http://varnitkhanna.com/notes/rsync-over-ssh/</guid>
+      <guid>http://localhost:1313/notes/rsync-over-ssh/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;rsync -truve ssh /local/dir/to/copy/* remoteServer:/path/to/save/&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
     </item>
   </channel>
