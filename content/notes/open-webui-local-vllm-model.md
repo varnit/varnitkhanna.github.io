@@ -1,7 +1,6 @@
 ---
 title: "Open Webui with Local vllm Model"
 date: 2024-11-14T02:09:04Z
-draft: true
 categories: 
   - "llm"
 ---
