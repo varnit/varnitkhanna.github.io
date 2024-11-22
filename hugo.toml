@@ -1,6 +1,6 @@
 baseURL = 'http://varnitkhanna.com/'
 languageCode = 'en-us'
-title = "Server Notes"
+title = "VK's Tech Notes"
 theme = 'typo'
 
 [taxonomies]
