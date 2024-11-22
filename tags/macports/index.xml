@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Macports on Server Notes</title>
-    <link>http://localhost:1313/tags/macports/</link>
-    <description>Recent content in Macports on Server Notes</description>
+    <title>Macports on VK&#39;s Tech Notes</title>
+    <link>http://varnitkhanna.com/tags/macports/</link>
+    <description>Recent content in Macports on VK&#39;s Tech Notes</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 06 Nov 2011 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/macports/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://varnitkhanna.com/tags/macports/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MacOS Lion macports erlang compilation patch</title>
-      <link>http://localhost:1313/notes/macos-lion-macports-erlang-compilation-patch/</link>
+      <link>http://varnitkhanna.com/notes/macos-lion-macports-erlang-compilation-patch/</link>
       <pubDate>Sun, 06 Nov 2011 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/notes/macos-lion-macports-erlang-compilation-patch/</guid>
+      <guid>http://varnitkhanna.com/notes/macos-lion-macports-erlang-compilation-patch/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Add the following under &amp;ldquo;platform darwin 11&amp;rdquo;&lt;/strong&gt;&lt;br&gt;&#xA;if {${configure.compiler} == &amp;ldquo;clang&amp;rdquo;} { configure.compiler llvm-gcc-4.2 } configure.cflags-delete &amp;ldquo;-std=c99&amp;rdquo; configure.cflags-delete -O2 configure.cxxflags-delete -O2 configure.cflags-append -O0 configure.cxxflags-append -O0 &amp;hellip;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>macports package contents</title>
-      <link>http://localhost:1313/notes/macports-package-contents/</link>
+      <link>http://varnitkhanna.com/notes/macports-package-contents/</link>
       <pubDate>Sat, 18 Dec 2010 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/notes/macports-package-contents/</guid>
+      <guid>http://varnitkhanna.com/notes/macports-package-contents/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;code&gt;port contents &amp;lt;package_name&amp;gt;&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
     </item>
   </channel>

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Node.js on Server Notes</title>
-    <link>http://localhost:1313/tags/node.js/</link>
-    <description>Recent content in Node.js on Server Notes</description>
+    <title>Node.js on VK&#39;s Tech Notes</title>
+    <link>http://varnitkhanna.com/tags/node.js/</link>
+    <description>Recent content in Node.js on VK&#39;s Tech Notes</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 02 Feb 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/node.js/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://varnitkhanna.com/tags/node.js/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>npm dev setup</title>
-      <link>http://localhost:1313/notes/npm-dev-setup/</link>
+      <link>http://varnitkhanna.com/notes/npm-dev-setup/</link>
       <pubDate>Tue, 02 Feb 2016 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/notes/npm-dev-setup/</guid>
+      <guid>http://varnitkhanna.com/notes/npm-dev-setup/</guid>
       <description>&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# create package.json&#xA;$ npm init&#xA;&#xA;# install specific version of npm package&#xA;$ npm install --save react@0.14.7&#xA;&#xA;# browserify&#xA;$ npm install -g browserify&#xA;&#xA;# Babel + browserify&#xA;$ npm install --save-dev babelify&#xA;&#xA;# build&#xA;$ npm run build&#xA;&#xA;# sass&#xA;$ npm install --save-dev node-sass&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
   </channel>
