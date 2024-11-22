@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Kernel on Server Notes</title>
-    <link>http://localhost:1313/tags/kernel/</link>
-    <description>Recent content in Kernel on Server Notes</description>
+    <title>Kernel on VK&#39;s Tech Notes</title>
+    <link>http://varnitkhanna.com/tags/kernel/</link>
+    <description>Recent content in Kernel on VK&#39;s Tech Notes</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 23 Oct 2007 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/kernel/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://varnitkhanna.com/tags/kernel/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>List freeBSD kernel modules</title>
-      <link>http://localhost:1313/notes/list-freebsd-kernel-modules/</link>
+      <link>http://varnitkhanna.com/notes/list-freebsd-kernel-modules/</link>
       <pubDate>Tue, 23 Oct 2007 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/notes/list-freebsd-kernel-modules/</guid>
+      <guid>http://varnitkhanna.com/notes/list-freebsd-kernel-modules/</guid>
       <description>&lt;p&gt;kldstat&lt;/p&gt;</description>
     </item>
   </channel>

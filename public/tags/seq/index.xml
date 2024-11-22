@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Seq on Server Notes</title>
-    <link>http://localhost:1313/tags/seq/</link>
-    <description>Recent content in Seq on Server Notes</description>
+    <title>Seq on VK&#39;s Tech Notes</title>
+    <link>http://varnitkhanna.com/tags/seq/</link>
+    <description>Recent content in Seq on VK&#39;s Tech Notes</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 26 Jan 2012 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/seq/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://varnitkhanna.com/tags/seq/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>seq leading zero</title>
-      <link>http://localhost:1313/notes/seq-leading-zero/</link>
+      <link>http://varnitkhanna.com/notes/seq-leading-zero/</link>
       <pubDate>Thu, 26 Jan 2012 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/notes/seq-leading-zero/</guid>
+      <guid>http://varnitkhanna.com/notes/seq-leading-zero/</guid>
       <description>&lt;p&gt;&lt;code&gt;seq -f &amp;quot;%02g&amp;quot; 1 1 24&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>bash for loop through numbers</title>
-      <link>http://localhost:1313/notes/bash-for-loop-through-numbers/</link>
+      <link>http://varnitkhanna.com/notes/bash-for-loop-through-numbers/</link>
       <pubDate>Mon, 03 Mar 2008 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/notes/bash-for-loop-through-numbers/</guid>
+      <guid>http://varnitkhanna.com/notes/bash-for-loop-through-numbers/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;code&gt;# for i in `seq 1 10`; do mysql -uusername -ppassword database_name -e &amp;quot;SELECT COUNT(*) FROM table$i&amp;quot;;done;&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
     </item>
   </channel>

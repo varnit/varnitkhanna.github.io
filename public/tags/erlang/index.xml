@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Erlang on Server Notes</title>
-    <link>http://localhost:1313/tags/erlang/</link>
-    <description>Recent content in Erlang on Server Notes</description>
+    <title>Erlang on VK&#39;s Tech Notes</title>
+    <link>http://varnitkhanna.com/tags/erlang/</link>
+    <description>Recent content in Erlang on VK&#39;s Tech Notes</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 01 May 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/erlang/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://varnitkhanna.com/tags/erlang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>trace webmachine resource</title>
-      <link>http://localhost:1313/notes/trace-webmachine-resource/</link>
+      <link>http://varnitkhanna.com/notes/trace-webmachine-resource/</link>
       <pubDate>Thu, 01 May 2014 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/notes/trace-webmachine-resource/</guid>
+      <guid>http://varnitkhanna.com/notes/trace-webmachine-resource/</guid>
       <description>&lt;p&gt;1&amp;gt; dbg:tracer().&lt;/p&gt;&#xA;&lt;p&gt;2&amp;gt; dbg:p(all,[c]).&lt;/p&gt;&#xA;&lt;p&gt;3&amp;gt; dbg:tp({my_resource, &amp;lsquo;_&amp;rsquo;, &amp;lsquo;_&amp;rsquo;}, []).&lt;/p&gt;</description>
     </item>
     <item>
       <title>erlang variable memory footprint</title>
-      <link>http://localhost:1313/notes/erlang-variable-memory-footprint/</link>
+      <link>http://varnitkhanna.com/notes/erlang-variable-memory-footprint/</link>
       <pubDate>Tue, 21 May 2013 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/notes/erlang-variable-memory-footprint/</guid>
+      <guid>http://varnitkhanna.com/notes/erlang-variable-memory-footprint/</guid>
       <description>&lt;p&gt;erts_debug:flat_size(Term).&lt;/p&gt;</description>
     </item>
     <item>
       <title>MacOS Lion macports erlang compilation patch</title>
-      <link>http://localhost:1313/notes/macos-lion-macports-erlang-compilation-patch/</link>
+      <link>http://varnitkhanna.com/notes/macos-lion-macports-erlang-compilation-patch/</link>
       <pubDate>Sun, 06 Nov 2011 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/notes/macos-lion-macports-erlang-compilation-patch/</guid>
+      <guid>http://varnitkhanna.com/notes/macos-lion-macports-erlang-compilation-patch/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Add the following under &amp;ldquo;platform darwin 11&amp;rdquo;&lt;/strong&gt;&lt;br&gt;&#xA;if {${configure.compiler} == &amp;ldquo;clang&amp;rdquo;} { configure.compiler llvm-gcc-4.2 } configure.cflags-delete &amp;ldquo;-std=c99&amp;rdquo; configure.cflags-delete -O2 configure.cxxflags-delete -O2 configure.cflags-append -O0 configure.cxxflags-append -O0 &amp;hellip;.&lt;/p&gt;</description>
     </item>
   </channel>
